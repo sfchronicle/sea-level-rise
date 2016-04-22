@@ -12,7 +12,7 @@
   <body>
 
     <header>
-      <a class="logo" href="http://www.sfchronicle.com">
+      <a class="logo" href="http://www.sfchronicle.com" target="_blank">
         <img src="./assets/sf_logo_black.png">
       </a>
     </header>
@@ -45,58 +45,98 @@
 
     <div class="byline">By John King</div>
     <div class="byline">May 2016</div>
-    <div id="sticky-anchor"></div>
+
+    <div class="menu-navigation">
+      <div class="menu-links">
+        <div class="logo-link link"><a href="http://www.sfchronicle.com" target="_blank">
+          <img src="./assets/sfletter_c_white.png"></a>
+        </div>
+        <div class="link"><a href="#part1" class="anchor">Introduction</a></div>
+        <div class="link"><a href="#part2" class="anchor">Resources</a></div>
+        <div class="link"><a href="#part3" class="anchor">Part 3</a></div>
+      </div>
+    </div>
 
     <div class="jump-navigation" id="sticky-element">
       <div class="jump-links">
         <div class="logo-link link"><a href="http://www.sfchronicle.com">
           <img src="./assets/sfletter_c_white.png"></a>
         </div>
-        <div class="link"><a href="#part1">Introduction</a></div>
-        <div class="link"><a href="#part2">Resources</a></div>
-        <div class="link"><a href="#part3">Part 3</a></div>
+        <div class="link"><a href="#part1" class="anchor">Introduction</a></div>
+        <div class="link"><a href="#part2" class="anchor">Resources</a></div>
+        <div class="link"><a href="#part3" class="anchor">Part 3</a></div>
       </div>
     </div>
 
     <div class="text intro">This is an introduction to the waterfront project, explaining what it is and how it was researched, or what it was motivated by or maybe an explanation of how there are multiple installments or something. This is an introduction to the waterfront project, explaining what it is and how it was researched, or what it was motivated by or maybe an explanation of how there are multiple installments or something.</div>
 
-    <div class="section-header" id="part1">Part 1</div>
-      <div class="whitespace"></div>
-      <div class="text-hed">Setting the scene</div>
-      <div class="section">
-        <%= t.include("_part1.html") %>
-      </div>
+    <div id="sticky-anchor"></div>
+
+    <div class="section" id="part1">
+      <div class="hed-container"><div class="text-hed">Setting the scene</div></div>
+      <%= t.include("_part1.html") %>
+    </div>
+
+    <div class="section" id="part2">
+      <div class="hed-container"><div class="text-hed">Related Resources</div></div>
+      <%= t.include("_part2.html") %>
+    </div>
 
 
-    <div class="section-header" id="part2">Part 2</div>
-      <div class="whitespace"></div>
-      <div class="text-hed">Related resources</div>
-      <div class="section">
-        <%= t.include("_part2.html") %>
-      </div>
-
-
-    <div class="section-header" id="part3">Part 3</div>
-      <div class="whitespace"></div>
-      <div class="text-hed">This is the third part.</div>
-      <div class="section">
-        <%= t.include("_part3.html") %>
-      </div>
-
+    <div class="section" id="part3">
+      <div class="hed-container"><div class="text-hed">This is the third part.</div></div>
+      <%= t.include("_part3.html") %>
+    </div>
 
     <div class="credits">
-      Reporting by
-        John King <a>jking@sfchronicle.com</a> &bull;
-      Web development and design by
-        Emma O'Neill <a>eoneill@sfchronicle.com</a> &bull;
-      Video by
-        Erin Brethauer <a>ebrethauer@sfchronicle.com</a> &bull;
-      Graphics by
-        John Blanchard <a>jblanchard@sfchronicle.com</a>
+      <div class="entry">Reporter: John King &bull; <a>jking@sfchronicle.com</a></div>
+      <div class="entry">Developer: Emma O'Neill &bull; <a>eoneill@sfchronicle.com</a></div>
+      <div class="entry">Video: Erin Brethauer &bull; <a>ebrethauer@sfchronicle.com</a></div>
+      <div class="entry">Illustrations: John Blanchard &bull; <a>jblanchard@sfchronicle.com</a></div>
+    </div>
+
+    <div class="divider">
+    </div>
+
+    <div class="dont-miss">
+      <div class="story">
+        <div class="padded">
+        <a href="http://projects.sfchronicle.com/2016/living-with-aids/" target="_blank">
+          <img src="http://ww4.hdnux.com/photos/44/14/17/9487327/6/landscape_43.jpg"></img>
+        </a>
+          <div class="small">Living with AIDS</div>
+        <a href="http://projects.sfchronicle.com/2016/living-with-aids/">
+        </a>
+        </div>
+      </div>
+      <div class="story">
+        <div class="padded">
+        <a href="http://projects.sfchronicle.com/2016/top100-restaurants/" target="_blank">
+          <img src="./assets/dont-miss-top100.jpg"></img>
+        </a>
+          <div class="small">Michael Bauer's Top 100 Restaurants</div>
+        </div>
+      </div>
+      <div class="story">
+        <div class="padded">
+        <a href="http://projects.sfchronicle.com/2016/living-with-aids/" target="_blank">
+          <img src="http://ww4.hdnux.com/photos/44/14/17/9487327/6/landscape_43.jpg"></img>
+        </a>
+          <div class="small">Living with AIDS</div>
+        </div>
+      </div>
+      <div class="story">
+        <div class="padded">
+        <a href="http://projects.sfchronicle.com/2016/drought-status/" target="_blank">
+          <img src="./assets/dont-miss-drought.jpg"></img>
+        </a>
+          <div class="small">Check the California drought status</div>
+        </div>
+      </div>
     </div>
 
     <footer>
-      <a class="logo" href="http://www.sfchronicle.com">
+      <a class="logo" href="http://www.sfchronicle.com" target="_blank">
         <img src="./assets/sf_logo_white.png">
       </a>
     </footer>

@@ -18,6 +18,8 @@
 @dark-gray: #696969;
 @light-gray: #B2B2B2;
 
+@share-gray: lighten(#4F5C70,10%);
+
 body {
   font-family: @body;
   max-width: 900px;
@@ -49,9 +51,17 @@ body {
   border-bottom: 1px black solid;
   width: 70%;
   margin-top: 30px;
+  padding-top: 4px;
+  background: lighten(@gray-blue,30%);
   // &.sticky {
   //   margin-top: 30px;
   // }
+}
+
+.hed-container {
+  width: 100%;
+  background: lighten(@gray-blue,30%);
+  height: 40px;
 }
 
 .chatter {
@@ -90,7 +100,7 @@ body {
   a {
     font-size: 20px;
     padding: 0 8px;
-    color: @dark-gray;
+    color: @share-gray;
 
     @include media (max-width $small-breakpoint) {
       font-size: 1.3em;
@@ -118,7 +128,7 @@ body {
   font-family: @body;
   &.intro {
     font-style: italic;
-    width: 70%;
+    width: 80%;
     text-align: center;
     margin: auto;
   }
@@ -176,13 +186,14 @@ footer {
 
 .credits {
   margin: 30px auto;
+  padding: 10px;
   text-align: center;
   font-style: italic;
   background: lighten(@teachers,40%);
   font-size: 16px;
   font-family: @body;
   .entry {
-    padding: 5px 0;
+    // padding: 5px 0;
   }
   width: 80%;
 }
@@ -220,13 +231,43 @@ footer {
   margin-top: 5px;
 }
 
-.related-stories {
-  height: 100px;
+.dont-miss {
+  .display-flex;
+  .flex-wrap(wrap);
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-family: @block-graphics;
+
+  .story {
+    .flex(0 0 25%);
+
+    @media @mobile {
+      .flex(1 1 50%)
+    }
+  }
+  .padded {
+    padding: 10px;
+  }
+  .small {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  img {
+    width: 100%;
+  }
+  // a {
+  //   color: @dark-gray;
+  //   transition: color .1s linear;
+  //
+  //   &:hover {
+  //     color: @df-blue;
+  //   }
+  // }
 }
 
 // navigation ---------------------------------------------------------
 
-.jump-navigation {
+.jump-navigation, .menu-navigation {
   background: darken(@gray-blue, 25%);
   padding: 5px 0;
   text-align: center;
@@ -239,11 +280,17 @@ footer {
   }
 }
 
-.jump-links {
+.jump-links, .menu-links {
   a {
     color: white;
     width: 400px;
     vertical-align: top;
+  }
+}
+.jump-navigation {
+  display: none;
+  &.sticky {
+    display: inline;
   }
 }
 
