@@ -38,5 +38,6 @@ $(function() {
 
 $(".anchor").click(function(event) {
   //  event.preventDefault();
-   $('body').animate( { scrollTop:$(this.hash).offset().top - 50} , 1000);
+  //  $('body').animate( { scrollTop:$(this.hash).offset().top - 50} , 1000);
+   $('body').animate( { scrollTop:$(this.hash).offset().top} , 1000);
 } );
