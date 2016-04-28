@@ -15,13 +15,11 @@
       <a class="logo" href="http://www.sfchronicle.com" target="_blank">
         <img src="./assets/sf_logo_black.png">
       </a>
-      <div class="test-class">In-depth report</div>
+      <a class="mobile-logo" href="http://www.sfchronicle.com" target="_blank">
+        <img src="./assets/sfletter_c_black.png">
+      </a>
+      <div class="special-head">Special report</div>
     </header>
-
-    <div class="divider-container">
-      <div class="top divider"></div>
-      <div class="top divider-text">In-depth report</div>
-    </div>
 
     <header class="splash">
       <div class="intro-video">
@@ -54,18 +52,16 @@
         </div>
         <div class="link"><a href="#part1" class="anchor">Introduction</a></div>
         <div class="link"><a href="#part2" class="anchor">Resources</a></div>
-        <div class="link"><a href="#part3" class="anchor">Part 3</a></div>
       </div>
     </div>
 
     <div class="jump-navigation" id="sticky-element">
       <div class="jump-links">
-        <div class="logo-link link"><a href="http://www.sfchronicle.com">
+        <div class="logo-link link"><a href="http://www.sfchronicle.com" target="_blank">
           <img src="./assets/sfletter_c_white.png"></a>
         </div>
         <div class="link"><a href="#part1" class="anchor">Introduction</a></div>
         <div class="link"><a href="#part2" class="anchor">Resources</a></div>
-        <div class="link"><a href="#part3" class="anchor">Part 3</a></div>
       </div>
     </div>
 
@@ -83,17 +79,14 @@
       <%= t.include("_part2.html") %>
     </div>
 
-
-    <div class="section" id="part3">
-      <div class="hed-container"><div class="text-hed">This is the third part.</div></div>
-      <%= t.include("_part3.html") %>
+    <div class="divider">
     </div>
 
     <div class="credits">
-      <div class="entry">Reporter: John King &bull; <a>jking@sfchronicle.com</a></div>
-      <div class="entry">Developer: Emma O'Neill &bull; <a>eoneill@sfchronicle.com</a></div>
-      <div class="entry">Video: Erin Brethauer &bull; <a>ebrethauer@sfchronicle.com</a></div>
-      <div class="entry">Illustrations: John Blanchard &bull; <a>jblanchard@sfchronicle.com</a></div>
+      <div class="entry">Reporter:  John King &bull; <a href="mailto:jking@sfchronicle.com">jking@sfchronicle.com</a>  &bull; <a href = "https://twitter.com/johnkingsfchron" target="_blank">@johnkingsfchron</a></div>
+      <div class="entry">Video:  Erin Brethauer  &bull; <a href="mailto:ebrethauer@sfchronicle.com">ebrethauer@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/erinbrethauer" target="_blank">@erinbrethauer</a></div>
+      <div class="entry">Developer:  Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
+      <div class="entry">Illustrations:  John Blanchard &bull; <a href="mailto:jblanchard@sfchronicle.com">jblanchard@sfchronicle.com</a></div>
     </div>
 
     <div class="divider">
@@ -112,7 +105,7 @@
       </div>
       <div class="story">
         <div class="padded">
-        <a href="http://projects.sfchronicle.com/2016/top100-restaurants/" target="_blank">
+        <a href="http://projects.sfchronicle.com/2016/top-100-restaurants/" target="_blank">
           <img src="./assets/dont-miss-top100.jpg"></img>
         </a>
           <div class="small">Michael Bauer's Top 100 Restaurants</div>
