@@ -20,20 +20,6 @@
 
 @share-gray: lighten(#4F5C70,10%);
 
-.test-class {
-  color: darken(@gray-blue,30%);
-  text-align: right;
-  font-family: @banner;
-  text-transform: uppercase;
-  text-transform: uppercase;
-  width: 200px;
-  float: right;
-  vertical-align: bottom;
-  padding-top: 10px;
-  font-weight: bold;
-  font-size: 16px;
-}
-
 body {
   font-family: @body;
   max-width: 900px;
@@ -87,9 +73,6 @@ body {
   margin-top: 28px;
   padding-top: 4px;
   background: lighten(@gray-blue,30%);
-  // &.sticky {
-  //   margin-top: 30px;
-  // }
 }
 
 .hed-container {
@@ -125,6 +108,9 @@ body {
   color: white;
   z-index: 100;
   position: relative;
+  @media @mobile {
+    font-size: 25px;
+  }
 }
 
 #social {
@@ -165,6 +151,7 @@ body {
     width: 80%;
     text-align: center;
     margin: auto;
+    padding: 20px 0;
     padding-bottom: 0px;
     @media @mobile {
       width: 100%;
@@ -332,8 +319,12 @@ footer {
 .jump-links, .menu-links {
   a {
     color: white;
-    width: 400px;
-    vertical-align: top;
+    // width: 400px;
+    // vertical-align: top;
+  }
+  color: white;
+  @media @mobile {
+    font-size: 20px;
   }
 }
 .jump-navigation {
@@ -345,42 +336,49 @@ footer {
 
 .link {
   padding: 0 20px;
-  // padding-bottom: 20px;
-  display: inline;
+  // display: inline-block;
   vertical-align: top;
-  // float: left;
-  width: 150px;
+  // width: 150px;
 }
 .logo-link {
-  width: 100px;
-  // float:left;
-  display: inline;
+  // width: 100px;
+  // display: inline;
   img {
     opacity: 1;
     height: 25px;
+    @media @mobile {
+      height: 16px;
+    }
+  }
+  // @media @mobile {
+  //   padding: 0;
+  // }
+}
+
+.link, .logo-link {
+  display: inline-block;
+  @media @mobile {
+    display: inline-block;
+    padding: 5px;
+    font-size: 14px;
+    padding-top: 5px;
+    margin: 0;
   }
 }
 
 #sticky-element.sticky {
-  max-width: 880px;
   width: 100%;
   z-index: 100;
   position: fixed;
   top: 0;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: 0px;
-  .link {
-    float: left;
-  }
-  .logo-link {
-    height: 25px;
-    // width: 100px;
-    float:left;
-    display: inline;
-    img {
-      opacity: 1;
-      height: 25px;
-    }
+  @media @mobile {
+    top: unset;
+    bottom: 0;
+    text-align: left;
+    font-size: 14px;
+    vertical-align: bottom;
   }
 }
 
@@ -390,6 +388,10 @@ footer {
   width: 100%;
   .intro-video {
     margin: 10px auto;
+  }
+  @media @mobile {
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -475,6 +477,7 @@ footer {
   text-align: center;
   width: 80%;
   margin: auto;
+  padding: 10px 0;
   @media @mobile {
     width: 100%;
   }
