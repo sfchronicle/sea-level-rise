@@ -24,17 +24,28 @@ body {
   font-family: @body;
   max-width: 900px;
   margin: auto;
-  padding: 0 10px;
+  // padding: 0 10px;
 }
 
 .placeholder-img {
   padding: 20px;
   width: 600px;
   margin: auto;
+  @media @tablet {
+    padding: 0;
+    width: 100%;
+  }
+  @media @mobile {
+    padding: 0;
+    width: 100%;
+  }
 }
 
 #part1, #part2, #part3 {
   padding-top: 20px;
+  @media @mobile {
+    padding-top: 0;
+  }
 }
 #part2 {
   padding-bottom: 20px;
@@ -44,9 +55,11 @@ body {
   font-weight: bold;
   font-size: 20px;
   margin-top: 5px;
+  margin-bottom: 5px;
   text-align: center;
   font-family: @block-graphics;
   font-weight: bold;
+  padding: 0 10px;
 }
 
 .special-head {
@@ -73,19 +86,27 @@ body {
   margin-top: 28px;
   padding-top: 4px;
   background: lighten(@gray-blue,30%);
+  @media @mobile {
+    margin-top: 0;
+    padding-top: 15px;
+  }
 }
 
 .hed-container {
   width: 100%;
   background: lighten(@gray-blue,30%);
   height: 40px;
+  @media @mobile {
+    height: 60px;
+  }
 }
 
 .chatter {
   font-size: 15px;
   text-align: center;
-  padding-bottom: 5px;
   font-family: @block-graphics;
+  padding: 0 10px;
+  padding-bottom: 5px;
   &.mobile {
     display: none;
     @media @mobile {
@@ -143,7 +164,7 @@ body {
 }
 
 .text {
-  padding: 20px 20px;
+  padding: 0 20px;
   font-size: 18px;
   font-family: @body;
   &.intro {
@@ -152,9 +173,14 @@ body {
     text-align: center;
     margin: auto;
     padding: 20px 0;
-    padding-bottom: 0px;
+    // padding-bottom: 0px;
+    @media @tablet {
+      padding: 20px 10px;
+    }
     @media @mobile {
       width: 100%;
+      padding: 10px;
+      margin: 0;
     }
   }
 }
@@ -203,6 +229,7 @@ footer {
   position: relative;
   z-index: 99;
   margin-top: 10px;
+  cursor: pointer;
 
   .logo {
     float: left;
@@ -218,6 +245,9 @@ footer {
     clear: both;
     content: " ";
     display: block;
+  }
+  @media @mobile {
+    margin-bottom: 40px;
   }
 }
 
@@ -308,6 +338,8 @@ footer {
   padding: 5px 0;
   text-align: center;
   margin: auto;
+  // max-width: 880px;
+  max-width: 900px;
   width: 100%;
   height: 38px;
   margin-top: 30px;
@@ -373,10 +405,10 @@ footer {
   top: 0;
   opacity: 0.9;
   margin-top: 0px;
+  text-align: left;
   @media @mobile {
     top: unset;
     bottom: 0;
-    text-align: left;
     font-size: 14px;
     vertical-align: bottom;
   }
@@ -387,7 +419,7 @@ footer {
 .splash {
   width: 100%;
   .intro-video {
-    margin: 10px auto;
+    margin: 10px 0;
   }
   @media @mobile {
     padding: 0;
@@ -397,37 +429,92 @@ footer {
 
 // interactive styles ---------------------------------------------------------
 
-.flex-container {
-  .display-flex();
-  height: 510px;
-  width: 80%;
+.interactive-header {
+  background: lighten(@gray-blue,10%);
+  width: 95%;
   margin: auto;
+  padding: 10px 0;
+  @media @mobile {
+    background: white;
+  }
+}
+
+.flex-container {
+  background: lighten(@gray-blue,20%);
+  .display-flex();
+  height: 550px;
+  width: 95%;
+  margin: 0 auto;
+  @media @mobile {
+    display: block;
+    margin-top: 300px;
+    clear: height;
+  }
 }
 
 .info {
-  .flex(0 0 50%);
+  .flex(0 0 60%);
+  margin-top: 20px;
   font-size: 17px;
-  padding-right: 20px;
+  padding-left: 20px;
+  font-family: @block-graphics;
 
   .graphic-title {
-    font-weight: bold;
     font-size: 22px;
-    color: darken(#DD492D, 20%);
-    font-family: @bold-graphics;
+    font-family: @block-graphics;
   }
   .graphic-text {
     font-size: 16px;
     font-family: @block-graphics;
+    padding-bottom: 20px;
+  }
+  @media @mobile {
+    padding: 20px;
   }
 }
 
 .image {
   .flex(1);
   position: relative;
+  margin: 0 10px;
 
   .background, .overlay {
     position: absolute;
     width: 100%;
+    padding-top: 45px;
+    @media @mobile {
+      height: 280px;
+      display: none;
+    }
+  }
+}
+
+.image-mobile {
+  display: none;
+  position: relative;
+  margin: auto;
+  .background, .overlay {
+    position: absolute;
+    width: 60%;
+    margin: auto;
+
+  }
+  @media @mobile {
+    display: block;
+  }
+}
+
+.inset-map {
+  img {
+    height: 300px;
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 5px 0;
+    padding-bottom: 10px;
+    @media @mobile {
+      height: 200px;
+    }
   }
 }
 

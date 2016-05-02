@@ -25,9 +25,11 @@
     "jquery": "^2.2.3",
     "less": "^2.0.0",
     "mime": "^1.2.11",
+    "okvideo": "git+https://github.com/okfocus/okvideo.git",
     "shelljs": "^0.5.1",
     "through2": "^2.0.0",
-    "typogr": "^0.6.4"
+    "typogr": "^0.6.4",
+    "video.js": "^5.9.2"
   },
   "browser": {
     "share": "./src/js/lib/share.min.js",
