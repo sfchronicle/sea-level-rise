@@ -22,8 +22,6 @@
 
 body {
   font-family: @body;
-  max-width: 900px;
-  margin: auto;
   // padding: 0 10px;
 }
 
@@ -43,6 +41,8 @@ body {
 
 #part1, #part2, #part3 {
   padding-top: 20px;
+  max-width: 900px;
+  margin: auto;
   @media @mobile {
     padding-top: 0;
   }
@@ -107,15 +107,19 @@ body {
   font-family: @block-graphics;
   padding: 0 10px;
   padding-bottom: 5px;
-  &.mobile {
-    display: none;
-    @media @mobile {
-      display: block;
-    }
-  }
-  @media @mobile {
-    display: none;
-  }
+  // &.mobile {
+  //   display: none;
+  //   @media @mobile {
+  //     display: block;
+  //   }
+  // }
+  // @media @mobile {
+  //   display: none;
+  // }
+}
+
+.intro-video {
+  position: relative;;
 }
 
 .title {
@@ -128,20 +132,35 @@ body {
   margin-bottom: 100px;
   color: white;
   z-index: 100;
-  position: relative;
+  position: absolute;
+  top: 250px;
+  left: 100px;
   @media @mobile {
-    font-size: 25px;
+    font-size: 20px;
+    top: 180px;
+    left: 20px;
   }
+  position: absolute;
 }
 
 #social {
   text-align: center;
-  margin-bottom:10px;
+  position: absolute;
+  top: 165px;
+  left: 90px;
+  color: white;
+  z-index: 400;
+  @media @mobile {
+    position: relative;
+    top: 0;
+    left: auto;
+  }
 
   a {
     font-size: 20px;
     padding: 0 8px;
     color: @share-gray;
+    cursor: pointer;
 
     @include media (max-width $small-breakpoint) {
       font-size: 1.3em;
@@ -149,6 +168,7 @@ body {
 
     &:hover {
       color: @light-gray;
+      cursor: pointer;
     }
   }
 }
@@ -161,9 +181,27 @@ body {
   font-size: 12px;
   text-align: center;
   font-family: @body;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  color: white;
+  z-index: 400;
+  &.lower {
+    top: 220px;
+    @media @mobile {
+      top: 115px;
+      left: 20px;
+    }
+  }
+  @media @mobile {
+    top: 100px;
+    left: 20px;
+  }
 }
 
 .text {
+  max-width: 900px;
+  margin: auto;
   padding: 0 20px;
   font-size: 18px;
   font-family: @body;
@@ -339,12 +377,19 @@ footer {
   text-align: center;
   margin: auto;
   // max-width: 880px;
-  max-width: 900px;
+  // max-width: 900px;
   width: 100%;
   height: 38px;
   margin-top: 30px;
   &.clicked {
     display: none;
+  }
+}
+
+.menu-navigation {
+  max-width: 880px;
+  @media @mobile {
+    margin-top: 5px;
   }
 }
 
@@ -368,13 +413,11 @@ footer {
 
 .link {
   padding: 0 20px;
-  // display: inline-block;
   vertical-align: top;
-  // width: 150px;
+  cursor: pointer;
 }
 .logo-link {
-  // width: 100px;
-  // display: inline;
+  cursor: pointer;
   img {
     opacity: 1;
     height: 25px;
@@ -382,9 +425,6 @@ footer {
       height: 16px;
     }
   }
-  // @media @mobile {
-  //   padding: 0;
-  // }
 }
 
 .link, .logo-link {
@@ -418,42 +458,168 @@ footer {
 
 .splash {
   width: 100%;
-  .intro-video {
-    margin: 10px 0;
-  }
   @media @mobile {
     padding: 0;
     margin: 0;
   }
+  padding: 0;
+}
+
+.inset-splash {
+  width: 80%;
+  margin: auto;
 }
 
 // interactive styles ---------------------------------------------------------
 
+.interactive-bureaucratic-maze {
+  font-family: @block-graphics;
+  margin: 20px 0;
+  .agency {
+    display: inline-block;
+    width: 70px;
+    padding: 5px;
+    &.ten, &.eleven {
+      width: 60px;
+    }
+    cursor: pointer;
+    &.active {
+      width: 80px;
+      &.ten, &.eleven {
+        width: 70px;
+      }
+    }
+    @media @tablet {
+      width: 60px;
+      &.ten, &.eleven {
+        width: 50px;
+      }
+    }
+    @media @mobile {
+      width: 50px;
+      &.ten, &.eleven {
+        width: 40px;
+      }
+      &.active {
+        width: 70px;
+        &.ten, &.eleven {
+          width: 60px;
+        }
+      }
+    }
+  }
+  .agency-wrapper {
+    text-align: center;
+  }
+  .graphic-permit, .graphic-reason {
+    text-align: center;
+    font-size: 16px;
+  }
+
+}
+
+
+.mobile-template {
+  background: lighten(@gray-blue,20%);
+  padding: 10px;
+}
+
+.mobile-container {
+  display: none;
+  position: relative;
+  max-width: 95%;
+  margin: auto;
+  .hed {
+    margin-top: 0;
+  }
+  .inset-map {
+    width: 80%;
+    margin: auto;
+  }
+  .graphic-text {
+    width: 90%;
+    margin: auto;
+    font-family: @block-graphics;
+    font-size: 15px;
+    padding-bottom: 20px;
+  }
+  .hed {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  @media @mobile {
+    display: block;
+  }
+}
+
+.scroll-right, .scroll-left {
+  position: absolute;
+  z-index: 50;
+  font-size: 50px;
+  top: 80px;
+  left: 10px;
+  background: lighten(@gray-blue,18%);
+  padding: 5px;
+}
+.scroll-right {
+  left: 85%;
+  &.last {
+    display: none;
+  }
+}
+.scroll-left {
+  &.first {
+    display: none;
+  }
+}
+
+
 .interactive-header {
-  background: lighten(@gray-blue,10%);
   width: 95%;
   margin: auto;
   padding: 10px 0;
-  @media @mobile {
-    background: white;
+  &.mobile {
+    display: none;
+    background: lighten(@gray-blue,10%);
+    @media @mobile {
+      display: block;
+    }
+  }
+  &.desktop {
+    @media @mobile {
+      display: none;
+    }
   }
 }
 
 .flex-container {
-  background: lighten(@gray-blue,20%);
+  background: white;
   .display-flex();
-  height: 550px;
-  width: 95%;
+  height: 700px;
+  @media @tablet {
+    height: 620px;
+  }
+  width: 100%;
   margin: 0 auto;
+  img {
+    height: 650px;
+    @media @tablet {
+      height: 600px;
+    }
+  }
+  .inset-map {
+    img {
+      height: 350px;
+    }
+  }
   @media @mobile {
-    display: block;
-    margin-top: 300px;
-    clear: height;
+    display: none;
   }
 }
 
 .info {
-  .flex(0 0 60%);
+  .flex(0 0 50%);
   margin-top: 20px;
   font-size: 17px;
   padding-left: 20px;
@@ -467,6 +633,8 @@ footer {
     font-size: 16px;
     font-family: @block-graphics;
     padding-bottom: 20px;
+    max-width: 400px;
+    margin: auto;
   }
   @media @mobile {
     padding: 20px;
@@ -476,31 +644,16 @@ footer {
 .image {
   .flex(1);
   position: relative;
-  margin: 0 10px;
+  margin-right: 20px;
 
   .background, .overlay {
     position: absolute;
     width: 100%;
-    padding-top: 45px;
+    // padding-top: 45px;
     @media @mobile {
       height: 280px;
       display: none;
     }
-  }
-}
-
-.image-mobile {
-  display: none;
-  position: relative;
-  margin: auto;
-  .background, .overlay {
-    position: absolute;
-    width: 60%;
-    margin: auto;
-
-  }
-  @media @mobile {
-    display: block;
   }
 }
 
@@ -512,6 +665,10 @@ footer {
     margin: auto;
     padding: 5px 0;
     padding-bottom: 10px;
+    max-width: 400px;
+    @media @tablet {
+      max-width: 350px;
+    }
     @media @mobile {
       height: 200px;
     }
@@ -574,4 +731,5 @@ footer {
   font-style: italic;
   font-weight: 100;
   font-size: 18px;
+  cursor: pointer;
 }

@@ -1,0 +1,12 @@
+id,agency,permit,reason
+0,Sonoma County,Grading permit,County permit needed for any project disturbing more than 1 acre of
+1,Bay Conservation and Development Commission,Development permit,Sign-off from state agency that has regulatory control over all projects within 100 feet of bay shoreline.
+2,Regional Water Quality Control Board,"Approval under Section 401, Clean Water Act","Review to make sure that the project does not result in a net loss of wetlands"
+3,State Water Resources Control Board,Waste discharge permit,Making sure the marsh restoration doesn't affect the bay's water quality during construction
+4,California State Lands Commission,Commission lease,A portion of the project required use of a sliver of an adjacent state-governed marsh
+5,California Department of Fish and Wildlife,Streambed alteration agreement,"Okay needed to approve any work in stream within project, such as landffill or the altering of flow"
+6,California Department of Fish and Wildlife (lead agency),California Environmental Impact Report,"State sign-off on the main review document, touching not just on the restoration but also issues such as traffic and regional recreation"
+7,U.S. Fish and Wildlife Service (lead agency),U.S. Environmental Impact Statement,"Federal sign-off on the main review document, touching not just on the restoration but also issues such as traffic and regional recreation"
+8,U.S. Fish and Wildlife Service,Biological opinion under Endangered Species Act,"An explanation of how to avoid harming endangered species on site, and spelling out the habitat being changed, with any needed mitigation."
+9,National Marine Fisheries Service,Letter of concurrence to biological opinion,Review of USFW opinion as it relates to ocean-bound fish
+10,U.S. Army Corps of Engineers,"Section 106, National Historic Preservation Act",Making sure no cultural resources were disturbed

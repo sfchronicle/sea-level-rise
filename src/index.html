@@ -48,7 +48,7 @@
     </div>
 
     <div class="byline">By John King</div>
-    <div class="byline">May 2016</div>
+    <div class="byline lower">May 2016</div>
 
     <div class="menu-navigation">
       <div class="menu-links">
@@ -100,12 +100,10 @@
     <div class="dont-miss">
       <div class="story">
         <div class="padded">
-        <a href="http://www.sfchronicle.com/style/article/Fashion-Warriors-Golden-State-shows-its-style-7271312.php" target="_blank">
-          <img src="./assets/warriors2.jpeg"></img>
+        <a href="http://projects.sfchronicle.com/2016/visas/" target="_blank">
+          <img src="./assets/dont-miss-visas.png"></img>
         </a>
-          <div class="small">Warriors fashion: Players show off their style</div>
-        <a href="http://projects.sfchronicle.com/2016/living-with-aids/">
-        </a>
+          <div class="small">H-1B visas: who gets them, where they go</div>
         </div>
       </div>
       <div class="story">
@@ -141,8 +139,9 @@
     </footer>
 
     <script>
-      var mapData = <%= JSON.stringify(csv.map_data) %>
-      var data = <%= JSON.stringify(json.AirportTransportation_Sheet1) %>;
+      var mapData = <%= JSON.stringify(csv.map_data) %>;
+      var mapDataMobile = <%= JSON.stringify(csv.map_data_mobile) %>;
+      var permitData = <%= JSON.stringify(csv.permit_data) %>;
     </script>
 
     <script src="app.js" async></script>
