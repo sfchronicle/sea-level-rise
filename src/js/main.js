@@ -2,14 +2,17 @@ require("component-responsive-frame/child");
 var dot = require("./lib/dot");
 var $ = require("jquery");
 
+// $("my-video-duck").prop('muted', true); //mute
+// $("my-video-infobox").prop('muted', true); //mute
+
 // setting up look up tables for mobile and desktop for clickable map
 var lookup = {};
 for (var i = 0, len = mapData.length; i < len; i++) {
-    lookup[mapData[i].id] = mapData[i];
+    lookup[mapData[i].slug] = mapData[i];
 }
 var lookup_mobile = {};
-for (var i = 0, len = mapDataMobile.length; i < len; i++) {
-    lookup_mobile[mapDataMobile[i].id] = mapDataMobile[i];
+for (var i = 0, len = mapData.length; i < len; i++) {
+    lookup_mobile[mapData[i].id] = mapData[i];
 }
 var lookup_agency = {};
 for (var i = 0, len = permitData.length; i < len; i++) {
@@ -18,6 +21,7 @@ for (var i = 0, len = permitData.length; i < len; i++) {
 
 // templates for the two interactives
 var template = dot.compile(require("../_info.html"));
+var mobile_template = dot.compile(require("../_mobile_info.html"));
 var agency_template = dot.compile(require("../_agency_info.html"));
 
 // initialize agency interactive
@@ -42,12 +46,12 @@ for (var i=0; i<agencyList.length; i+=1) {
 
 // initialize map interactive on mobile
 var index = 0;
-document.querySelector(".mobile-template").innerHTML = template(lookup_mobile[index]);
+document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mobile[index]);
 
 // set up clicking to update map interactive on mobile
 document.getElementById("scroll-right").addEventListener("click", function() {
   index = index+1;
-  document.querySelector(".mobile-template").innerHTML = template(lookup_mobile[index]);
+  document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mobile[index]);
   if (index == 5) {
     $("#scroll-right").addClass("last");
   } else {
@@ -62,7 +66,7 @@ document.getElementById("scroll-right").addEventListener("click", function() {
 
 document.getElementById("scroll-left").addEventListener("click", function() {
   index = index-1;
-  document.querySelector(".mobile-template").innerHTML = template(lookup_mobile[index]);
+  document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mobile[index]);
   if (index == 0) {
     $("#scroll-left").addClass("first");
   } else {
@@ -75,19 +79,141 @@ document.getElementById("scroll-left").addEventListener("click", function() {
   };
 });
 
+// photo gallery #1
+var gallery1_idx = 0;
+// set up clicking to update map interactive on mobile
+document.getElementById("scroll-right-gallery1").addEventListener("click", function() {
+  gallery1_idx = gallery1_idx+1;
+  $(".photo_g1").removeClass("active");
+  $("#photo_g1"+gallery1_idx).addClass("active");
+  if (gallery1_idx == 2) {
+    $("#scroll-right-gallery1").addClass("last");
+  } else {
+    $("#scroll-right-gallery1").removeClass("last");
+  };
+  if (gallery1_idx == 0) {
+    $("#scroll-left-gallery1").addClass("first");
+  } else {
+    $("#scroll-left-gallery1").removeClass("first");
+  };
+});
+document.getElementById("scroll-left-gallery1").addEventListener("click", function() {
+  gallery1_idx = gallery1_idx-1;
+  $(".photo_g1").removeClass("active");
+  $("#photo_g1"+gallery1_idx).addClass("active");
+  if (gallery1_idx == 2) {
+    $("#scroll-right-gallery1").addClass("last");
+  } else {
+    $("#scroll-right-gallery1").removeClass("last");
+  };
+  if (gallery1_idx == 0) {
+    $("#scroll-left-gallery1").addClass("first");
+  } else {
+    $("#scroll-left-gallery1").removeClass("first");
+  };
+});
+
+
+// photo gallery #2
+var gallery2_idx = 0;
+// set up clicking to update map interactive on mobile
+document.getElementById("scroll-right-gallery2").addEventListener("click", function() {
+  gallery2_idx = gallery2_idx+1;
+  $(".photo_g2").removeClass("active");
+  $("#photo_g2"+gallery2_idx).addClass("active");
+  if (gallery2_idx == 2) {
+    $("#scroll-right-gallery2").addClass("last");
+  } else {
+    $("#scroll-right-gallery2").removeClass("last");
+  };
+  if (gallery2_idx == 0) {
+    $("#scroll-left-gallery2").addClass("first");
+  } else {
+    $("#scroll-left-gallery2").removeClass("first");
+  };
+});
+document.getElementById("scroll-left-gallery2").addEventListener("click", function() {
+  gallery2_idx = gallery2_idx-1;
+  $(".photo_g2").removeClass("active");
+  $("#photo_g2"+gallery2_idx).addClass("active");
+  if (gallery2_idx == 2) {
+    $("#scroll-right-gallery2").addClass("last");
+  } else {
+    $("#scroll-right-gallery2").removeClass("last");
+  };
+  if (gallery2_idx == 0) {
+    $("#scroll-left-gallery2").addClass("first");
+  } else {
+    $("#scroll-left-gallery2").removeClass("first");
+  };
+});
+
+// photo gallery #3
+var gallery3_idx = 0;
+// set up clicking to update map interactive on mobile
+document.getElementById("scroll-right-gallery3").addEventListener("click", function() {
+  gallery3_idx = gallery3_idx+1;
+  $(".photo_g3").removeClass("active");
+  $("#photo_g3"+gallery3_idx).addClass("active");
+  if (gallery3_idx == 4) {
+    $("#scroll-right-gallery3").addClass("last");
+  } else {
+    $("#scroll-right-gallery3").removeClass("last");
+  };
+  if (gallery3_idx == 0) {
+    $("#scroll-left-gallery3").addClass("first");
+  } else {
+    $("#scroll-left-gallery3").removeClass("first");
+  };
+});
+document.getElementById("scroll-left-gallery3").addEventListener("click", function() {
+  gallery3_idx = gallery3_idx-1;
+  $(".photo_g3").removeClass("active");
+  $("#photo_g3"+gallery3_idx).addClass("active");
+  if (gallery3_idx == 4) {
+    $("#scroll-right-gallery3").addClass("last");
+  } else {
+    $("#scroll-right-gallery3").removeClass("last");
+  };
+  if (gallery3_idx == 0) {
+    $("#scroll-left-gallery3").addClass("first");
+  } else {
+    $("#scroll-left-gallery3").removeClass("first");
+  };
+});
+
+// clicking for desktop map interactive
+// var qsa = s => Array.prototype.slice.call(document.querySelectorAll(s));
+// qsa(".st-group").forEach(function(group) {
+//   group.addEventListener("click", function(e) {
+//     console.log("we are here and it might be good");
+//     document.querySelector(".note").innerHTML = template(lookup[e.target.parentElement.id]);
+//     if (document.querySelector(".selected")) document.querySelector(".selected").classList.remove("selected");
+//     e.target.parentElement.classList.add("selected");
+//   });
+// });
+
 // clicking for desktop map interactive
 var qsa = s => Array.prototype.slice.call(document.querySelectorAll(s));
-qsa(".st-group").forEach(function(group) {
+qsa(".map-group").forEach(function(group) {
   group.addEventListener("click", function(e) {
-    document.querySelector(".note").innerHTML = template(lookup[e.target.parentElement.id]);
-    console.log(e.target.parentElement.id);
+    document.querySelector(".note").innerHTML = template(lookup[this.title]);
     if (document.querySelector(".selected")) document.querySelector(".selected").classList.remove("selected");
     e.target.parentElement.classList.add("selected");
-    console.log(e.target.parentElement);
   });
 });
 
-// sticky navigation controls
+// sizes for peeps-interactive
+if (screen.width > 768) {
+  var peep_width = 70;
+} else if (screen.width <= 768 && screen.width > 480) {
+  var peep_width = 60;
+} else if (screen.width <= 480) {
+  var peep_width = 50;
+}
+
+var toggle = 1;
+// // sticky navigation controls
 function sticky_relocate() {
     var window_top = $(window).scrollTop();
     var div_top = $('#sticky-anchor').offset().top - 40;
@@ -98,7 +224,51 @@ function sticky_relocate() {
         $('#sticky-element').removeClass('sticky');
         $('.menu-navigation').removeClass('sticky');
     }
+    if ((window_top > $('#peeps-interactive').offset().top-400) & toggle) {
+      for (var i=1; i<12; i++) {
+        if (i==1) {
+          $('#agency'+i).animate({opacity:1.0},i*200);
+        } else {
+          $('#agency'+i).animate({opacity:0.8},i*200);
+        }
+      }
+      toggle = 0;
+    }
+
+//     if ((window_top > $('#peeps-interactive').offset().top-200) & toggle) {
+//       for (var i=1; i<12; i++) {
+//         if (i==1) {
+//           $('#agency'+i).animate({width:peep_width},i*100);
+//           $('#agency'+i).animate({width:peep_width+10},(i+1)*100);
+//         }
+//         else if (i<10) {
+//           $('#agency'+i).animate({width:peep_width-10},i*100);
+//           $('#agency'+i).animate({width:peep_width},(i+1)*100);
+//         } else {
+//           $('#agency'+i).animate({width:peep_width-20},i*100);
+//           $('#agency'+i).animate({width:peep_width-10},(i+1)*100);
+//         }
+//       }
+//       toggle = 0;
+//     }
 }
+//
+// $(".agency").click(function() {
+//   console.log("happened");
+//   console.log(this.id);
+//   if ((this.id != "agency11") & (this.id != "agency10")) {
+//     $(this).animate({width:peep_width+10},400);
+//   } else {
+//     $(this).animate({width:peep_width},400);
+//   }
+// });
+
+$(".agency").click(function() {
+  for (var i=1; i<12; i++) {
+      $('#agency'+i).animate({opacity:0.8},i*50);
+  }
+  $(this).animate({opacity:1.0},50);
+});
 
 $(function() {
     $(window).scroll(sticky_relocate);
@@ -106,5 +276,5 @@ $(function() {
 });
 
 $(".anchor").click(function(event) {
-   $('body').animate( { scrollTop:$(this.hash).offset().top} , 1000);
+  $('body').animate( { scrollTop:$(this.hash).offset().top} , 1000);
 } );

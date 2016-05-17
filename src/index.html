@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <%= t.include("partials/_head.html") %>
+    <%= t.include("partials/_analytics_hearst.html") %>
     </head>
   <body>
 
@@ -20,41 +21,32 @@
       <div class="special-head">Special report</div>
     </header>
 
-    <header class="splash">
-      <div class="intro-video">
-
-        <video id="my-video" class="video-js" autoplay="" loop="" preload="auto" style="background-color:#fff;margin: 0 auto;width:100%; height:100%;">
-           <source src="http://projects.sfchronicle.com/2016/waterfront_videos/Looper2.mp4" type="video/mp4">
-           <p class="vjs-no-js">
-             To view this video please enable JavaScript, and consider upgrading to a web browser that
-             <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-           </p>
-         </video>
-
+    <header class="title-container">
+      <div class="title-img">
+        <img class="img" src="./assets/photos/waterfrontmainxxxx.jpg">
+        <div class="caption">This is a caption.</div>
+        <div class="credit nopadding">Photo: Michael Macor, The Chronicle</div>
       </div>
-      <div class="title">Sea level rise</div>
+      <div class="title">Rising seas
+        <div class="byline">By John King</div>
+        <div class="byline lower">May 2016</div>
+      </div>
     </header>
 
     <div id="social">
-      <a id="twitter-icon" title="Share on Twitter">
-         <i class="fa fa-twitter"></i>
+      <a id="twitter-icon" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=http%3A//projects.sfchronicle.com/2016/sea-level-rise&amp;text=Sea level rise">
+        <i class="fa fa-twitter"></i>
       </a>
-      <a id="facebook-icon" title="Share on Facebook">
+      <a id="facebook-icon" title="Share on Facebook" href="#" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fsea-level-rise%2F', 'facebook-share-dialog', 'width=626,height=436'); return false;">
           <i class="fa fa-facebook"></i>
       </a>
-      <a id="mail-icon">
+      <a id="mail-icon" href="mailto:?subject=Sea Level Rise | SF Chronicle special report.&body=Special project: how sea level rise will impact the bay: http://projects.sfchronicle.com/2016/sea-level-rise/">
         <i class="fa fa-envelope" aria-hidden="true"></i>
       </a>
     </div>
 
-    <div class="byline">By John King</div>
-    <div class="byline lower">May 2016</div>
-
     <div class="menu-navigation">
       <div class="menu-links">
-        <div class="logo-link link"><a href="http://www.sfchronicle.com" target="_blank">
-          <img src="./assets/sfletter_c_white.png"></a>
-        </div>
         <div class="link"><a href="#part1" class="anchor">Introduction</a></div>&bull;
         <div class="link"><a href="#part2" class="anchor">Resources</a></div>
       </div>
@@ -67,6 +59,7 @@
         </div>
         <div class="link"><a href="#part1" class="anchor">Introduction</a></div>&bull;
         <div class="link"><a href="#part2" class="anchor">Resources</a></div>
+        <div class="subscribe link"><a href="http://www.sfchronicle.com/ultimate_access/" target="_blank">Subscribe</a></div>
       </div>
     </div>
 
@@ -89,9 +82,10 @@
 
     <div class="credits">
       <div class="entry">Reporter:  John King &bull; <a href="mailto:jking@sfchronicle.com">jking@sfchronicle.com</a>  &bull; <a href = "https://twitter.com/johnkingsfchron" target="_blank">@johnkingsfchron</a></div>
-      <div class="entry">Video:  Erin Brethauer  &bull; <a href="mailto:ebrethauer@sfchronicle.com">ebrethauer@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/erinbrethauer" target="_blank">@erinbrethauer</a></div>
-      <div class="entry">Developer:  Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
+      <div class="entry">Videographer and producer: Erin Brethauer  &bull; <a href="mailto:ebrethauer@sfchronicle.com">ebrethauer@sfchronicle.com</a>   &bull; <a href = "https://www.instagram.com/erinbrethauer/" target="_blank">@erinbrethauer</a></div>
+      <div class="entry">Interactive producer:  Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
       <div class="entry">Illustrations:  John Blanchard &bull; <a href="mailto:jblanchard@sfchronicle.com">jblanchard@sfchronicle.com</a></div>
+      <div class="entry">Photographer:  Michael Macor &bull; <a href="mailto:mmacor@sfchronicle.com">mmacor@sfchronicle.com</a>   &bull; <a href = "https://www.instagram.com/mmacor/" target="_blank">@mmacor</a></div>
     </div>
 
     <div class="divider">
@@ -116,10 +110,10 @@
       </div>
       <div class="story">
         <div class="padded">
-        <a href="http://projects.sfchronicle.com/2016/living-with-aids/" target="_blank">
-          <img src="./assets/aids_special.png"></img>
+        <a href="http://projects.sfchronicle.com/2016/teacher-pay/" target="_blank">
+          <img src="./assets/dont-miss-teachers.jpg"></img>
         </a>
-          <div class="small">Living with AIDS</div>
+          <div class="small">Teachers priced out</div>
         </div>
       </div>
       <div class="story">
@@ -140,7 +134,6 @@
 
     <script>
       var mapData = <%= JSON.stringify(csv.map_data) %>;
-      var mapDataMobile = <%= JSON.stringify(csv.map_data_mobile) %>;
       var permitData = <%= JSON.stringify(csv.permit_data) %>;
     </script>
 
