@@ -229,43 +229,16 @@ function sticky_relocate() {
         if (i==1) {
           $('#agency'+i).animate({opacity:1.0},i*200);
         } else {
-          $('#agency'+i).animate({opacity:0.8},i*200);
+          $('#agency'+i).animate({opacity:0.6},i*200);
         }
       }
       toggle = 0;
     }
-
-//     if ((window_top > $('#peeps-interactive').offset().top-200) & toggle) {
-//       for (var i=1; i<12; i++) {
-//         if (i==1) {
-//           $('#agency'+i).animate({width:peep_width},i*100);
-//           $('#agency'+i).animate({width:peep_width+10},(i+1)*100);
-//         }
-//         else if (i<10) {
-//           $('#agency'+i).animate({width:peep_width-10},i*100);
-//           $('#agency'+i).animate({width:peep_width},(i+1)*100);
-//         } else {
-//           $('#agency'+i).animate({width:peep_width-20},i*100);
-//           $('#agency'+i).animate({width:peep_width-10},(i+1)*100);
-//         }
-//       }
-//       toggle = 0;
-//     }
 }
-//
-// $(".agency").click(function() {
-//   console.log("happened");
-//   console.log(this.id);
-//   if ((this.id != "agency11") & (this.id != "agency10")) {
-//     $(this).animate({width:peep_width+10},400);
-//   } else {
-//     $(this).animate({width:peep_width},400);
-//   }
-// });
 
 $(".agency").click(function() {
   for (var i=1; i<12; i++) {
-      $('#agency'+i).animate({opacity:0.8},i*50);
+      $('#agency'+i).animate({opacity:0.6},i*50);
   }
   $(this).animate({opacity:1.0},50);
 });
