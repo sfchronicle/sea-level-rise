@@ -453,6 +453,10 @@ footer {
 
 // navigation ---------------------------------------------------------
 
+.navigation {
+  width: 100%;
+}
+
 .jump-navigation, .menu-navigation {
   background: darken(@gray-blue, 25%);
   padding: 5px 0;
@@ -460,7 +464,7 @@ footer {
   margin: auto;
   // max-width: 880px;
   // max-width: 900px;
-  width: 100%;
+  width: inherit;
   height: 38px;
   margin-top: 10px;
   &.clicked {
@@ -530,7 +534,8 @@ footer {
 }
 
 #sticky-element.sticky {
-  width: 100%;
+  // width: 100%;
+  // width: inherit;
   z-index: 100;
   position: fixed;
   top: 0;
@@ -643,6 +648,16 @@ footer {
   .graphic-permit, .graphic-reason {
     text-align: center;
     font-size: 16px;
+    margin: 0 20px;
+    @media @mobile {
+      margin: 0;
+    }
+  }
+  .chatter {
+    margin: 0 20px;
+    @media @mobile {
+      margin: 0;
+    }
   }
 
 }

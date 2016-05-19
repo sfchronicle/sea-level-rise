@@ -1,12 +1,12 @@
 id,agency,permit,reason
-0,Sonoma County,Grading permit,County permit needed for any project disturbing more than 1 acre of
-1,Bay Conservation and Development Commission,Development permit,Sign-off from state agency that has regulatory control over all projects within 100 feet of bay shoreline.
-2,Regional Water Quality Control Board,"Approval under Section 401, Clean Water Act","Review to make sure that the project does not result in a net loss of wetlands"
-3,State Water Resources Control Board,Waste discharge permit,Making sure the marsh restoration doesn't affect the bay's water quality during construction
-4,California State Lands Commission,Commission lease,A portion of the project required use of a sliver of an adjacent state-governed marsh
-5,California Department of Fish and Wildlife,Streambed alteration agreement,"Okay needed to approve any work in stream within project, such as landffill or the altering of flow"
-6,California Department of Fish and Wildlife (lead agency),California Environmental Impact Report,"State sign-off on the main review document, touching not just on the restoration but also issues such as traffic and regional recreation"
-7,U.S. Fish and Wildlife Service (lead agency),U.S. Environmental Impact Statement,"Federal sign-off on the main review document, touching not just on the restoration but also issues such as traffic and regional recreation"
-8,U.S. Fish and Wildlife Service,Biological opinion under Endangered Species Act,"An explanation of how to avoid harming endangered species on site, and spelling out the habitat being changed, with any needed mitigation."
-9,National Marine Fisheries Service,Letter of concurrence to biological opinion,Review of USFW opinion as it relates to ocean-bound fish
-10,U.S. Army Corps of Engineers,"Section 106, National Historic Preservation Act",Making sure no cultural resources were disturbed
+0,Sonoma County,Grading permit,"County permit needed for any project involving sizable soil movement -- in this case, more than 50 cubic yards of land."
+1,Bay Conservation and Development Commission,Development permit,"Sign-off from the state agency with regulatory control over all projects within 100 feet of bay shoreline, since a levee breach was involved."
+2,Regional Water Quality Control Board,"Approval under Section 401, Clean Water Act","Review of the project's impact on wetlands, due to the levee breaches and alterations to drainage ditches and seasonal wetlands that existed on the ranch."
+3,State Water Resources Control Board,Waste discharge permit,Review to make sure that the discharge of fill and dredged material wouldn't affect the bay's water quality during construction.
+4,California State Lands Commission,Commission lease,"A portion of the project, including the levee breach and a connector channel, involved the use of state lands. "
+5,California Department of Fish and Wildlife,Streambed alteration agreement,One of project's levee breaches required review for its impact since it involved landfill and the altering of tidal flows.
+6,California Department of Fish and Wildlife (lead agency),California Environmental Impact Report,"State sign-off on the main review document, touching not just on the restoration but also issues such as traffic, including any needed mitigation efforts."
+7,U.S. Fish and Wildlife Service (lead agency),U.S. Environmental Impact Statement,"Federal sign-off on the main review document spelling out all project-related impacts, as well as whatever mitigation might be deemed necessary."
+8,U.S. Fish and Wildlife Service,Biological opinion under Endangered Species Act,"Reviewing the steps to avoid harming endangered species on site, including salt marsh harvest mouse, Ridgway's rail, California red legged frog, nesting migratory birds, and longfin smelt."
+9,National Marine Fisheries Service,Letter of concurrence to biological opinion,Review of USFW opinion since federally protected marine fish species could be where levee breaches and channel excavation were conducted.
+10,U.S. Army Corps of Engineers,"Section 106, National Historic Preservation Act",The Clean Water Act was triggered in part because dredged soil was discharged to the bay. The historic review was to make sure no cultural resources were disturbed.
