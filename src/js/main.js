@@ -155,7 +155,7 @@ document.getElementById("scroll-right-gallery3").addEventListener("click", funct
   gallery3_idx = gallery3_idx+1;
   $(".photo_g3").removeClass("active");
   $("#photo_g3"+gallery3_idx).addClass("active");
-  if (gallery3_idx == 4) {
+  if (gallery3_idx == 2) {
     $("#scroll-right-gallery3").addClass("last");
   } else {
     $("#scroll-right-gallery3").removeClass("last");
@@ -170,7 +170,7 @@ document.getElementById("scroll-left-gallery3").addEventListener("click", functi
   gallery3_idx = gallery3_idx-1;
   $(".photo_g3").removeClass("active");
   $("#photo_g3"+gallery3_idx).addClass("active");
-  if (gallery3_idx == 4) {
+  if (gallery3_idx == 2) {
     $("#scroll-right-gallery3").addClass("last");
   } else {
     $("#scroll-right-gallery3").removeClass("last");

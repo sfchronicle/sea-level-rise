@@ -576,9 +576,14 @@ footer {
 
 .interactive-bureaucratic-maze {
   font-family: @block-graphics;
-  margin: 70px 0;
+  .hed, .chatter, .agency-role {
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  margin: 70px auto;
   @media @mobile {
-    margin: 50px 0;
+    margin: 50px auto;
   }
   .agency {
     opacity: 0;
@@ -612,14 +617,14 @@ footer {
       }
     }
     @media @mobile {
-      width: 40px;
+      width: 38px;
       &.ten, &.eleven {
-        width: 30px;
+        width: 28px;
       }
       &.active {
-        width: 50px;
+        width: 48px;
         &.ten, &.eleven {
-          width: 40px;
+          width: 38px;
         }
       }
     }
@@ -634,13 +639,16 @@ footer {
       height: 150px;
     }
     @media @mobile {
-      width: 50px;
+      width: 48px;
       height: 128px;
     }
   }
   .agency-wrapper {
     text-align: center;
     padding: 0 5px;
+    @media @mobile {
+      padding: 0;
+    }
   }
   .agency-role {
     padding: 0 5px;
@@ -654,7 +662,8 @@ footer {
     }
   }
   .chatter {
-    margin: 0 20px;
+    margin: 0 auto;
+    padding: 0 20px;
     @media @mobile {
       margin: 0;
     }
