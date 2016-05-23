@@ -26,6 +26,10 @@ body {
   // padding: 0 10px;
 }
 
+.clickable-map {
+  width: 50%;
+}
+
 .title-container {
   background: white;
   padding: 0;
@@ -688,13 +692,12 @@ footer {
   position: relative;
   max-width: 95%;
   margin: auto;
-  .hed {
-    margin-top: 0;
-    display: inline-block;
-  }
   .inset-map {
-    width: 80%;
+    width: 90%;
     margin: auto;
+    @media @mobile {
+      width: 80%;
+    }
   }
   .tiny-map {
     width: 95%;
@@ -712,10 +715,15 @@ footer {
     font-size: 15px;
     padding-bottom: 20px;
   }
+  .mobile-hed {
+    min-height: 65px;
+    display:table;
+    width: 100%;
+  }
   .hed {
-    width: 95%;
-    margin: auto;
-    margin-bottom: 5px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
   }
 }
 
@@ -772,12 +780,18 @@ footer {
   z-index: 50;
   font-size: 50px;
   top: 80px;
-  left: 10px;
+  left: 2%;
   background: lighten(@gray-blue,18%);
   padding: 5px;
+  @media @mobile {
+    top: 60px;
+  }
 }
 .scroll-right {
   left: 85%;
+  @media @mobile {
+    left: 90%;
+  }
   &.last {
     display: none;
   }
@@ -815,15 +829,9 @@ footer {
   }
   width: 100%;
   margin: 0 auto;
-  img {
-    height: 650px;
-    @media @tablet {
-      height: 600px;
-    }
-  }
   .inset-map {
     img {
-      height: 350px;
+      width: 95%;
     }
   }
   @media @mobile {
@@ -846,6 +854,7 @@ footer {
     font-size: 16px;
     font-family: @block-graphics;
     padding-bottom: 20px;
+    padding-top: 15px;
     max-width: 400px;
     margin: auto;
   }
@@ -870,23 +879,16 @@ footer {
   }
 }
 
-.inset-map {
-  img {
-    height: 300px;
-    position: relative;
-    display: block;
-    margin: auto;
-    padding: 5px 0;
-    padding-bottom: 10px;
-    max-width: 400px;
-    @media @tablet {
-      max-width: 350px;
-    }
-    @media @mobile {
-      height: 200px;
-    }
-  }
-}
+// .inset-map {
+//   img {
+//     width: 50%;
+//     position: relative;
+//     display: block;
+//     margin: auto;
+//     padding: 5px 0;
+//     padding-bottom: 10px;
+//   }
+// }
 
 .overlay {
   height: 0;

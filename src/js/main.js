@@ -86,7 +86,7 @@ document.getElementById("scroll-right-gallery1").addEventListener("click", funct
   gallery1_idx = gallery1_idx+1;
   $(".photo_g1").removeClass("active");
   $("#photo_g1"+gallery1_idx).addClass("active");
-  if (gallery1_idx == 2) {
+  if (gallery1_idx == 6) {
     $("#scroll-right-gallery1").addClass("last");
   } else {
     $("#scroll-right-gallery1").removeClass("last");
@@ -101,7 +101,7 @@ document.getElementById("scroll-left-gallery1").addEventListener("click", functi
   gallery1_idx = gallery1_idx-1;
   $(".photo_g1").removeClass("active");
   $("#photo_g1"+gallery1_idx).addClass("active");
-  if (gallery1_idx == 2) {
+  if (gallery1_idx == 6) {
     $("#scroll-right-gallery1").addClass("last");
   } else {
     $("#scroll-right-gallery1").removeClass("last");
