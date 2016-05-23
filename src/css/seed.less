@@ -64,10 +64,16 @@ body {
 }
 
 .small-format-photo {
-  width: 300px;
+  width: 370px;
   float: left;
-  margin-right: 30px;
-  margin-left: 18%;
+  margin-left: 10%;
+  margin-right: 20px;
+  &.right {
+    float: right;
+    margin-right: 10%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
   @media @tablet {
     margin-left: 20px;
   }
@@ -114,6 +120,7 @@ body {
   }
 }
 #part2 {
+  // padding-top: 20px;
   padding-bottom: 50px;
 }
 .credits {
@@ -205,16 +212,16 @@ body {
   color: white;
   z-index: 100;
   position: absolute;
-  top: 60%;
+  top: 55%;
   left:0;
   right:0;
   margin: 0 auto;
   @media @tablet {
-    top: 55%;
+    top: 45%;
     font-size: 40px;
   }
   @media @mobile {
-    top: 36%;
+    top: 28%;
     font-size: 30px;
   }
 }
@@ -252,15 +259,16 @@ body {
   }
 
   a {
-    font-size: 22px;
-    padding: 0 8px;
-    color: @share-gray;
-    cursor: pointer;
-
-    @include media (max-width $small-breakpoint) {
-      font-size: 1.3em;
+    font-size: 30px;
+    @media @tablet {
+      font-size: 22px;
     }
-
+    @media @mobile {
+      font-size: 16px;
+    }
+    padding: 0 8px;
+    color: white;
+    cursor: pointer;
     &:hover {
       color: @light-gray;
       cursor: pointer;
@@ -282,19 +290,29 @@ body {
     padding: 0 10px;
   }
   &.intro {
+    background: @back-gray;
     font-style: italic;
-    width: 80%;
+    border: 1px black solid;
+    width: 60%;
+    max-width: 500px;
+    margin: 20px;
+    padding: 20px;
+    margin-right: 10%;
+    float: right;
+    font-size: 12px;
     text-align: center;
-    margin: auto;
-    padding: 20px 0;
+
     // padding-bottom: 0px;
     @media @tablet {
-      padding: 20px 10px;
+      padding: 20px;
+      margin: 20px;
+      margin-top: 0;
     }
     @media @mobile {
-      width: 100%;
+      width: 90%;
       padding: 10px;
-      margin: 0;
+      margin: 20px;
+      margin-top: 0;
     }
   }
 }
@@ -395,6 +413,10 @@ footer {
     height: 1px;
     border-bottom: 1px black solid;
   }
+  &.introbox {
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
 }
 .divider-text {
   margin: auto;
@@ -410,6 +432,14 @@ footer {
     border-bottom: 2px black solid;
     margin-bottom: 10px;
     background-color: darken(@gray-blue,30%);
+  }
+  &.introbox {
+    margin-top: -33px;
+    width: 300px;
+    background: @back-gray;
+    @media @mobile {
+      width: 220px;
+    }
   }
 }
 .divider-container {
@@ -751,7 +781,7 @@ footer {
   cursor: pointer;
   z-index: 50;
   font-size: 50px;
-  width: 10%;
+  width: 8%;
   color: black;
   height: 100%;
   .fa {
@@ -759,17 +789,19 @@ footer {
     @media @mobile {
       margin-top: 80px;
     }
-    width: 10%;
   }
 }
 .scroll-right-gallery1, .scroll-right-gallery2, .scroll-right-gallery3 {
-  left: 93%;
+  left: 92%;
   &.last {
     display: none;
   }
 }
 .scroll-left-gallery1, .scroll-left-gallery2, .scroll-left-gallery3 {
-  left: 3%;
+  left: 5%;
+  @media @mobile {
+    left: 2%;
+  }
   &.first {
     display: none;
   }
@@ -934,7 +966,7 @@ footer {
 .resource {
   font-weight: bolder;
   text-align: left;
-  width: 80%;
+  width: 85%;
   margin: auto;
   padding: 5px 20px;
   @media @mobile {
