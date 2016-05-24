@@ -221,6 +221,9 @@ body {
   left:0;
   right:0;
   margin: 0 auto;
+  @media @tablet-horiz {
+    top: 50%;
+  }
   @media @tablet {
     top: 45%;
     font-size: 40px;
@@ -422,6 +425,11 @@ footer {
   &.introbox {
     margin-top: 5px;
     margin-bottom: 25px;
+  }
+  &.short {
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px @dark-gray solid;
   }
 }
 .divider-text {

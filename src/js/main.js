@@ -39,7 +39,7 @@ for (var i=0; i<agencyList.length; i+=1) {
     $(".agency").removeClass("active");
     var elemID = this.id;
     $('#'+elemID).addClass("active");
-    var elemIDnum = elemID.slice(-1);
+    var elemIDnum = elemID.split("y")[1]-1;
     document.querySelector(".agency-role").innerHTML = agency_template(lookup_agency[elemIDnum]);
   }, false);
 };
