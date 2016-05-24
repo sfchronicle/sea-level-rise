@@ -67,7 +67,10 @@ body {
   width: 370px;
   float: left;
   margin-left: 10%;
+  // margin-left: 50%;
   margin-right: 20px;
+  // margin-left: 10%;
+  // margin-right: 20px;
   &.right {
     float: right;
     margin-right: 10%;
@@ -870,9 +873,9 @@ footer {
 .flex-container {
   background: white;
   .display-flex();
-  height: 700px;
+  height: 600px;
   @media @tablet {
-    height: 620px;
+    height: 600px;
   }
   width: 100%;
   margin: 0 auto;
@@ -888,7 +891,7 @@ footer {
 
 .info {
   .flex(0 0 50%);
-  margin-top: 20px;
+  // margin-top: 20px;
   font-size: 17px;
   padding-left: 20px;
   font-family: @block-graphics;
@@ -913,8 +916,11 @@ footer {
 .image {
   .flex(1);
   position: relative;
-  margin-right: 20px;
-
+  max-width: 360px;
+  margin: 0 auto;
+  margin-top: 20px;
+  // margin-right: 20px;
+  // max-width: 300px;
   .background, .overlay {
     position: absolute;
     width: 100%;
@@ -924,6 +930,11 @@ footer {
       display: none;
     }
   }
+}
+
+.inset-map {
+  max-width: 400px;
+  margin: 20px auto;
 }
 
 // .inset-map {

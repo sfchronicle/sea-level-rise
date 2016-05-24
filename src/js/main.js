@@ -2,6 +2,28 @@ require("component-responsive-frame/child");
 var dot = require("./lib/dot");
 var $ = require("jquery");
 
+$(window).resize(function() {
+    var Wwidth= $(this).width();
+    console.log(Wwidth);
+    if (Wwidth < 1100) {
+      $('.left').css('margin-left',20 +'px');
+      $('.intro').css('margin-right',20 +'px');
+      $('.right').css('margin-right',20 +'px');
+    } else if (Wwidth < 1400) {
+      $('.left').css('margin-left','10%');
+      $('.intro').css('margin-right','10%');
+      $('.right').css('margin-right','10%');
+    } else if (Wwidth < 2060) {
+      $('.left').css('margin-left','20%');
+      $('.intro').css('margin-right','20%');
+      $('.right').css('margin-right','20%');
+    } else {
+      $('.left').css('margin-left','30%');
+      $('.intro').css('margin-right','30%');
+      $('.right').css('margin-right','30%');
+    }
+});
+
 // $("my-video-duck").prop('muted', true); //mute
 // $("my-video-infobox").prop('muted', true); //mute
 
