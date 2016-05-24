@@ -26,6 +26,13 @@ body {
   // padding: 0 10px;
 }
 
+li {
+  margin: 0 55px;
+  @media @mobile {
+    margin: 0 5px;
+  }
+}
+
 .clickable-map {
   width: 50%;
 }
@@ -46,6 +53,9 @@ body {
   max-width: 800px;
   width: 80%;
   margin: auto;
+  img {
+    width:100%;
+  }
   @media @tablet {
     padding: 0;
     width: 90%;
@@ -64,30 +74,40 @@ body {
 }
 
 .small-format-photo {
+  margin-left: 30%;
   width: 370px;
   float: left;
   margin-left: 10%;
-  // margin-left: 50%;
   margin-right: 20px;
-  // margin-left: 10%;
-  // margin-right: 20px;
   &.right {
     float: right;
-    margin-right: 10%;
+    margin-right: 30%;
     margin-left: 20px;
     margin-bottom: 10px;
+    @media @width2060 {
+      margin-right: 20%;}
+    @media @width1400 {
+      margin-right: 10%;}
+    @media @width1100 {
+      margin-right: 20px;}
     @media @mobile {
       clear: both;
       width: 90%;
       margin: 0 5%;
     }
   }
-  @media @tablet {
-    margin-left: 20px;
-  }
+  @media @width2060 {
+    margin-left: 20%;}
+  @media @width1400 {
+    margin-left: 10%;}
+  @media @width1100 {
+    margin-left: 20px;}
   @media @mobile {
     width: 100%;
     margin: 20px auto;
+    img {
+      width: 100%;
+    }
   }
 }
 .inset-photo, .photo_g1, .photo_g2, .photo_g3, .wide-format-photo {
@@ -310,12 +330,16 @@ body {
     max-width: 500px;
     margin: 20px;
     padding: 20px;
-    margin-right: 10%;
+    margin-right: 30%;
     float: right;
     font-size: 12px;
     text-align: center;
-
-    // padding-bottom: 0px;
+    @media @width2060 {
+      margin-right: 20%;}
+    @media @width1400 {
+      margin-right: 10%;}
+    @media @width1100 {
+      margin-right: 20px;}
     @media @tablet {
       padding: 20px;
       margin: 20px;
@@ -655,7 +679,7 @@ footer {
         width: 80px;
       }
     }
-    @media @tablet {
+    @media @tablet-horiz {
       width: 50px;
       &.ten, &.eleven {
         width: 40px;
@@ -686,7 +710,7 @@ footer {
     position: relative;
     width: 90px;
     height: 220px;
-    @media @tablet {
+    @media @tablet-horiz {
       width: 60px;
       height: 150px;
     }

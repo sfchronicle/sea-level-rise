@@ -4,8 +4,9 @@ var $ = require("jquery");
 
 $(window).resize(function() {
     var Wwidth= $(this).width();
-    console.log(Wwidth);
-    if (Wwidth < 1100) {
+    if (Wwidth <= 480) {
+      console.log("phone");
+    } else if (Wwidth < 1100) {
       $('.left').css('margin-left',20 +'px');
       $('.intro').css('margin-right',20 +'px');
       $('.right').css('margin-right',20 +'px');
