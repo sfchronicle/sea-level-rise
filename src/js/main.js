@@ -285,3 +285,34 @@ function go() {
 }
 
 go();
+
+// scrolling map for embarcadero section
+var locations = [
+  'Pier 43',
+  'Pier 31',
+  'Pier 15',
+  'Pier 1½ to Pier 5',
+  'Ferry Terminal',
+  'Pier 24 Annex',
+  'Piers 30-32',
+  'Pier 38'
+]
+
+$(window).scroll(function(){
+    var pos = $(this).scrollTop();
+    if(pos < 200) {
+        $('.top').slideUp().text(titles[0]);
+    }
+    if(pos > 200) {
+        $('.top').slideDown();
+    }
+    if(pos > 700) {
+        $('.top').text(titles[1]);
+    }
+    if(pos > 1300) {
+        $('.top').text(titles[2]);
+    }
+    if(pos > 1800) {
+        $('.top').text(titles[3]);
+    }
+});
