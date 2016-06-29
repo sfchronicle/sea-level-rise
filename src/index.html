@@ -46,12 +46,20 @@
     </header>
 
     <div class="navigation">
+      <div class="menu-navigation">
+        <div class="menu-links">
+          <div class="link"><a href="#part1" class="anchor">A region at risk</a></div>&bull;
+          <div class="link"><a href="#part3" class="anchor">The Embarcadero</a></div>&bull;
+          <div class="link"><a href="#part2" class="anchor">Resources</a></div>
+        </div>
+      </div>
       <div class="jump-navigation" id="sticky-element">
         <div class="jump-links">
           <div class="logo-link link"><a href="http://www.sfchronicle.com" target="_blank">
             <img src="./assets/sfletter_c_white.png"></a>
           </div>
           <div class="link"><a href="#part1" class="anchor">A region at risk</a></div>&bull;
+          <div class="link"><a href="#part3" class="anchor">The Embarcadero</a></div>&bull;
           <div class="link"><a href="#part2" class="anchor">Resources</a></div>
           <div class="subscribe link"><a href="http://www.sfchronicle.com/ultimate_access/" target="_blank">Subscribe</a></div>
         </div>
@@ -79,6 +87,11 @@
       </div>
 
       <%= t.include("_part1.html") %>
+    </div>
+
+    <div class="section" id="part3">
+      <div class="hed-container"><div class="text-hed">The Embarcadero</div></div>
+      <%= t.include("_part3.html") %>
     </div>
 
     <div class="section" id="part2">
