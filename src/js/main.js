@@ -300,6 +300,10 @@ textHeight = textHeight-20; // every block has 40px of padding except the bottom
 
 var top_padding = Math.floor((mapHeight-textHeight)/7);
 console.log(top_padding);
+if (top_padding < 0) {
+  console.log("ERROR ERROR ERROR");
+  top_padding = 0;
+}
 embarcaderoData.forEach(function(pier,index) {
   if (index > 0) {
     var pier_str = ".pier"+index;
@@ -309,7 +313,7 @@ embarcaderoData.forEach(function(pier,index) {
 
 $(window).scroll(function(){
     var pos = $(this).scrollTop();
-    var embarcadero_pos = $('#sticky-map-top').offset().top-300;
+    var embarcadero_pos = $('#sticky-map-top').offset().top-200;
     if(pos < embarcadero_pos) {
         $('.pier0').css('color','black');
     }
