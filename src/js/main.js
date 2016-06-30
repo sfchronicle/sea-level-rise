@@ -319,7 +319,7 @@ $(window).scroll(function(){
       var idx = Math.round((pos-embarcadero_pos)/inc);
       console.log("this is the index");
       console.log(idx);
-      var top_padding = idx*inc+"px";
+      var top_padding = (idx*inc+20)+"px";
       console.log(top_padding);
       $('.pier-info').text(embarcaderoData[idx].text);
       $('.pier-info').css('padding-top',top_padding);
