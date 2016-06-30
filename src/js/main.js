@@ -288,22 +288,30 @@ go();
 
 // scrolling map for embarcadero section
 
-var count = 1;
-var mapHeight = 1200; //size of map
+var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
+var textHeight = 0;
 var inc = mapHeight/8; //how often we should see new map element
-embarcaderoData.forEach(function(pier) {
-  var pier_str = ".pier"+count;
-  var top_padding = "40px";
+embarcaderoData.forEach(function(pier,index) {
+  var pier_str = ".pier"+index;
   $(pier_str).text(pier.text);
-  $(pier_str).css('padding-top',top_padding);
-  count = count + 1;
+  textHeight = textHeight + $(pier_str).height()+40; // each block has 40px padding
+});
+textHeight = textHeight-20; // every block has 40px of padding except the bottom
+
+var top_padding = Math.floor((mapHeight-textHeight)/7);
+console.log(top_padding);
+embarcaderoData.forEach(function(pier,index) {
+  if (index > 0) {
+    var pier_str = ".pier"+index;
+    $(pier_str).css('padding-top',top_padding);
+  }
 });
 
 $(window).scroll(function(){
     var pos = $(this).scrollTop();
     var embarcadero_pos = $('#sticky-map-top').offset().top-300;
     if(pos < embarcadero_pos) {
-        $('.pier1').css('color','black');
+        $('.pier0').css('color','black');
     }
     if(pos > embarcadero_pos) {
       $(".pier-info").css('color','#B2B2B2');
