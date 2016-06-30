@@ -1,6 +1,7 @@
 require("component-responsive-frame/child");
 var dot = require("./lib/dot");
 var $ = require("jquery");
+var d3 = require('d3');
 
 $(window).resize(function() {
     var Wwidth= $(this).width();
@@ -349,3 +350,25 @@ $(window).scroll(function(){
 //       $('.pier-info').css('padding-top',top_padding);
 //     }
 // });
+
+// code for timeline
+
+var xScale = d3.scaleLinear()
+  .domain([1863,2016])
+  .range([0,645]);
+
+var xAxisGroup = d3.select(".timeline")
+  .append("svg")
+    .attr("width",800)
+    .attr("height",500)
+  .call(d3.axisBottom(xScale).tickValues([1863,2016]))
+  .data(timelineData)
+  .append("g")
+  .enter().append("circle") 
+    .attr("cx", function(d) {
+      console.log(d);
+      console.log(d.year);
+      return d.year - 1863;
+    })
+    .attr("cy", 5)
+    .attr("r", 5);
