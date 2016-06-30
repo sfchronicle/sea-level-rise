@@ -357,18 +357,51 @@ var xScale = d3.scaleLinear()
   .domain([1863,2016])
   .range([0,645]);
 
-var xAxisGroup = d3.select(".timeline")
-  .append("svg")
-    .attr("width",800)
-    .attr("height",500)
-  .call(d3.axisBottom(xScale).tickValues([1863,2016]))
-  .data(timelineData)
-  .append("g")
-  .enter().append("circle") 
-    .attr("cx", function(d) {
-      console.log(d);
-      console.log(d.year);
-      return d.year - 1863;
-    })
-    .attr("cy", 5)
-    .attr("r", 5);
+var height = 50;
+var width = 500;
+var margin = {
+  top: 15,
+  right: 15,
+  bottom: 40,
+  left: 45
+};
+
+var xAxisGroup = d3.select(".timeline").append("svg")
+    .attr("width",width + margin.left + margin.right)
+    .attr("height",height + margin.top + margin.bottom)
+    .append("g");
+
+// x-axis scale
+var x = d3.scaleLinear()
+    .rangeRound([0,width]);
+
+x.domain(d3.extent(timelineData, function(d) {
+  console.log(d.year);
+  return d.year;
+}));
+
+var xAxis = d3.axisTop()
+  .scale(x)
+  .tickFormat(d3.format(".0f"))
+  .tickValues(["1863","1970","2016"])
+  .tickSize([10]);
+
+xAxisGroup.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis)
+    .append("circle")
+      .attr("cx",5)
+      .attr("cy",5);
+
+// xAxisGroup
+//   .call(d3.axisBottom(xScale).tickValues(["1863","2016"]))
+//   .data(timelineData)
+//   .enter().append("circle")
+//     .attr("cx", function(d) {
+//       console.log(d);
+//       console.log(d.year-1863);
+//       return d.year - 1863;
+//     })
+//     .attr("cy", 5)
+//     .attr("r", 5);
