@@ -287,64 +287,53 @@ function go() {
 go();
 
 // scrolling map for embarcadero section
-var locations = [
-  'Pier 43',
-  'Pier 31',
-  'Pier 15',
-  'Pier 1½ to Pier 5',
-  'Ferry Terminal',
-  'Pier 24 Annex',
-  'Piers 30-32',
-  'Pier 38'
-]
+
+var count = 1;
+var mapHeight = 1200; //size of map
+var inc = mapHeight/8; //how often we should see new map element
+embarcaderoData.forEach(function(pier) {
+  var pier_str = ".pier"+count;
+  var top_padding = "40px";
+  $(pier_str).text(pier.text);
+  $(pier_str).css('padding-top',top_padding);
+  count = count + 1;
+});
 
 $(window).scroll(function(){
     var pos = $(this).scrollTop();
-    // console.log(pos);
     var embarcadero_pos = $('#sticky-map-top').offset().top-300;
-    // console.log(embarcadero_pos);
-    // var embarcadero_bottom = $('#sticky-map-bottom').offset().top;
     if(pos < embarcadero_pos) {
-        $('.pier-info').slideUp().text(embarcaderoData[0].text);
+        $('.pier1').css('color','black');
     }
-    if(pos >= embarcadero_pos) {
-        $('.pier-info').slideDown();
-    }
-    // console.log(embarcaderoData);
     if(pos > embarcadero_pos) {
-      // console.log(embarcaderoData[0].text);
-      var mapHeight = 1200; //size of map
-      var inc = mapHeight/8; //how often we should see new map element
-      console.log(pos-embarcadero_pos);
+      $(".pier-info").css('color','#B2B2B2');
       var idx = Math.round((pos-embarcadero_pos)/inc);
-      console.log("this is the index");
-      console.log(idx);
-      var top_padding = (idx*inc+20)+"px";
-      console.log(top_padding);
-      $('.pier-info').text(embarcaderoData[idx].text);
-      $('.pier-info').css('padding-top',top_padding);
+      var pier_active = ".pier"+idx;
+      $(pier_active).css('color','black');
     }
-    // if(pos > embarcadero_pos+100) {
-    //   $('.pier-info').text(embarcaderoData[1].text);
-    //   $('.pier-info').css('padding-top','200px');
-    // }
-    // if(pos > embarcadero_pos+200) {
-    //   $('.pier-info').text(embarcaderoData[2].text);
-    //   $('.pier-info').css('padding-top','300px');
-    // }
-    // if(pos > embarcadero_pos+300) {
-    //   $('.pier-info').text(embarcaderoData[3].text);
-    //   $('.pier-info').css('padding-top','400px');
-    // }
-    // if(pos > embarcadero_pos+400) {
-    //   $('.pier-info').text(embarcaderoData[4].text);
-    //   $('.pier-info').css('padding-top','500px');
-    // }
-    // if(pos > embarcadero_pos+500) {
-    //   $('.pier-info').text(embarcaderoData[5].text);
-    //   $('.pier-info').css('padding-top','600px');
-    // }
-    // if(pos > 1800) {
-    //     $('.pier-info').text(embarcaderoData[locations[0]);
-    // }
 });
+
+// $(window).scroll(function(){
+//     var pos = $(this).scrollTop();
+//     var embarcadero_pos = $('#sticky-map-top').offset().top-300;
+//     if(pos < embarcadero_pos) {
+//         $('.pier-info').slideUp().text(embarcaderoData[0].text);
+//     }
+//     if(pos >= embarcadero_pos) {
+//         $('.pier-info').slideDown();
+//     }
+//     // console.log(embarcaderoData);
+//     if(pos > embarcadero_pos) {
+//       // console.log(embarcaderoData[0].text);
+//       var mapHeight = 1200; //size of map
+//       var inc = mapHeight/8; //how often we should see new map element
+//       console.log(pos-embarcadero_pos);
+//       var idx = Math.round((pos-embarcadero_pos)/inc);
+//       console.log("this is the index");
+//       console.log(idx);
+//       var top_padding = (idx*inc+20)+"px";
+//       console.log(top_padding);
+//       $('.pier-info').text(embarcaderoData[idx].text);
+//       $('.pier-info').css('padding-top',top_padding);
+//     }
+// });

@@ -437,7 +437,9 @@ footer {
 }
 
 .divider {
-  border-bottom: 1px black solid;
+  width: 80%;
+  margin: auto;
+  border-bottom: 1px @dark-gray solid;
   height: 2px;
   &.top {
     padding-top: 20px;
@@ -450,7 +452,7 @@ footer {
     width: 90%;
     margin: auto;
     height: 1px;
-    border-bottom: 1px black solid;
+    border-bottom: 1px @dark-gray solid;
   }
   &.introbox {
     margin-top: 5px;
@@ -1083,6 +1085,7 @@ footer {
   padding: 20px;
   font-family: @block-graphics;
   font-size: 15px;
+  color: @light-gray;
 }
 
 .embarcadero-map-interactive {
