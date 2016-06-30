@@ -300,19 +300,51 @@ var locations = [
 
 $(window).scroll(function(){
     var pos = $(this).scrollTop();
-    if(pos < 200) {
-        $('.top').slideUp().text(titles[0]);
+    // console.log(pos);
+    var embarcadero_pos = $('#sticky-map-top').offset().top-300;
+    // console.log(embarcadero_pos);
+    // var embarcadero_bottom = $('#sticky-map-bottom').offset().top;
+    if(pos < embarcadero_pos) {
+        $('.pier-info').slideUp().text(embarcaderoData[0].text);
     }
-    if(pos > 200) {
-        $('.top').slideDown();
+    if(pos >= embarcadero_pos) {
+        $('.pier-info').slideDown();
     }
-    if(pos > 700) {
-        $('.top').text(titles[1]);
+    // console.log(embarcaderoData);
+    if(pos > embarcadero_pos) {
+      // console.log(embarcaderoData[0].text);
+      var mapHeight = 1200; //size of map
+      var inc = mapHeight/8; //how often we should see new map element
+      console.log(pos-embarcadero_pos);
+      var idx = Math.round((pos-embarcadero_pos)/inc);
+      console.log("this is the index");
+      console.log(idx);
+      var top_padding = idx*inc+"px";
+      console.log(top_padding);
+      $('.pier-info').text(embarcaderoData[idx].text);
+      $('.pier-info').css('padding-top',top_padding);
     }
-    if(pos > 1300) {
-        $('.top').text(titles[2]);
-    }
-    if(pos > 1800) {
-        $('.top').text(titles[3]);
-    }
+    // if(pos > embarcadero_pos+100) {
+    //   $('.pier-info').text(embarcaderoData[1].text);
+    //   $('.pier-info').css('padding-top','200px');
+    // }
+    // if(pos > embarcadero_pos+200) {
+    //   $('.pier-info').text(embarcaderoData[2].text);
+    //   $('.pier-info').css('padding-top','300px');
+    // }
+    // if(pos > embarcadero_pos+300) {
+    //   $('.pier-info').text(embarcaderoData[3].text);
+    //   $('.pier-info').css('padding-top','400px');
+    // }
+    // if(pos > embarcadero_pos+400) {
+    //   $('.pier-info').text(embarcaderoData[4].text);
+    //   $('.pier-info').css('padding-top','500px');
+    // }
+    // if(pos > embarcadero_pos+500) {
+    //   $('.pier-info').text(embarcaderoData[5].text);
+    //   $('.pier-info').css('padding-top','600px');
+    // }
+    // if(pos > 1800) {
+    //     $('.pier-info').text(embarcaderoData[locations[0]);
+    // }
 });
