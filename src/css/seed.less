@@ -1096,10 +1096,10 @@ footer {
 // pt 3: timeline code -----------------------------------------------------------
 
 .timeline-container {
-  padding-top: 20px;
   max-width: 800px;
   width: 80%;
   margin: auto;
+  font-family: @block-graphics;
 
   @media @tablet {
     width: 90%;
@@ -1112,6 +1112,16 @@ footer {
 }
 
 .timeline {
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  border-bottom: .5px solid rgba(0,0,0,0.2);
+  border-top: .5px solid rgba(0,0,0,0.2);
+}
+
+#timeline-placeholder {
+  display: none;
+  height: 93px;
 }
 
 .event {
@@ -1144,4 +1154,72 @@ footer {
   width: 90%;
   margin-left: 5%;
   }
+}
+
+#year0, #year1 {
+  fill: blue;
+}
+
+#year2, #year3, #year4, #year5, #year6, #year7, #year8, #year9, #year10, #year11, #year12, #year13, #year14 {
+  display: none;
+}
+
+.tick:hover > #year2, 
+.tick:hover > #year2,
+.tick:hover > #year3, 
+.tick:hover > #year4, 
+.tick:hover > #year5, 
+.tick:hover > #year6, 
+.tick:hover > #year7, 
+.tick:hover > #year8, 
+.tick:hover > #year9, 
+.tick:hover > #year10, 
+.tick:hover > #year11,
+.tick:hover > #year12,
+.tick:hover > #year13,
+.tick:hover > #year14 {
+  display: block;
+}
+
+.tick:hover circle {
+  fill: black;
+}
+
+.tick .active {
+  display: block !important;
+  fill: black;
+}
+
+.tick text {
+  font-size: 13px;
+}
+
+#timeline.sticky {
+  // width: 100%;
+  // width: inherit;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  margin-top: 38px;
+  text-align: left;
+  @media @mobile {
+    top: unset;
+    bottom: 0;
+    font-size: 14px;
+    vertical-align: bottom;
+  }
+}
+
+#timeline-bottom {
+  height: 1px;
+}
+
+svg {
+  margin: 0 auto;
+  display: block;
+}
+
+path.domain {
+  stroke-width: 2px;
+  stroke: rgba(0,0,0,0.2);
 }

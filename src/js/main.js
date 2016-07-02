@@ -357,42 +357,109 @@ var xScale = d3.scaleLinear()
   .domain([1863,2016])
   .range([0,645]);
 
+
+if (screen.width > 600) {
+  var width = 500;
+  var margin = {
+    top: 5,
+    right: 40,
+    bottom: 40,
+    left: 40
+  };
+} else if (screen.width <= 600 && screen.width > 480) {
+  var width = 400;
+  var margin = {
+    top: 5,
+    right: 25,
+    bottom: 40,
+    left: 25
+  };
+} else if (screen.width <= 480) {
+  var width = 280;
+  var margin = {
+    top: 5,
+    right: 20,
+    bottom: 40,
+    left: 20
+  };
+}
+
 var height = 50;
-var width = 500;
-var margin = {
-  top: 15,
-  right: 15,
-  bottom: 40,
-  left: 45
-};
 
 var xAxisGroup = d3.select(".timeline").append("svg")
     .attr("width",width + margin.left + margin.right)
     .attr("height",height + margin.top + margin.bottom)
-    .append("g");
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 // x-axis scale
 var x = d3.scaleLinear()
     .rangeRound([0,width]);
 
+var x2 = d3.scaleLinear()
+    .rangeRound([0,width]);
+
 x.domain(d3.extent(timelineData, function(d) {
-  console.log(d.year);
   return d.year;
 }));
 
-var xAxis = d3.axisTop()
+x2.domain(d3.extent(timelineData, function(d) {
+  return d.year;
+}));
+
+var xAxis2 = d3.axisTop()
+  .scale(x2)
+  .tickFormat(d3.format(".0f"))
+  .tickValues(["1863","2016"]
+//    d3.extent(timelineData, function(d) {
+//      return d.year;
+//    }) 
+  )
+  .tickSize(0)
+  .tickPadding(9);
+
+var xAxis = d3.axisBottom()
   .scale(x)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1863","1970","2016"])
-  .tickSize([10]);
+  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
+//    d3.extent(timelineData, function(d) {
+//      return d.year;
+//    }) 
+  )
+  .tickSize(0)
+  .tickPadding(9);
 
 xAxisGroup.append("g")
-    .attr("class", "x axis")
+    .attr("class", "axisbottom")
     .attr("transform", "translate(0," + height + ")")
-    .call(xAxis)
+    .call(xAxis2);
+
+xAxisGroup.append("g")
+    .attr("class", "axistop")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+var axistop = xAxisGroup.selectAll(".axistop");
+
+var ticks = axistop.selectAll(".tick")
+    .style("cursor", "pointer")
+    .on("click", function(d){
+        document.location.href = "#year-" + d;
+    });
+
+ticks.selectAll("line").remove();
+ticks.each(function() { 
+  d3.select(this)
     .append("circle")
-      .attr("cx",5)
-      .attr("cy",5);
+      .attr("r", 6)
+      .attr("fill","white")
+      .style("stroke","black")
+      .style("stroke-width","2px");
+  d3.selectAll("circle")
+    .attr("id", function(d,i) {return "tick" + i})
+  d3.selectAll("text")
+    .attr("id", function(d,i) {return "year" + i})
+});
 
 // xAxisGroup
 //   .call(d3.axisBottom(xScale).tickValues(["1863","2016"]))
@@ -405,3 +472,49 @@ xAxisGroup.append("g")
 //     })
 //     .attr("cy", 5)
 //     .attr("r", 5);
+
+
+// sticky timeline
+
+function stick_here() {
+  var window_top = $(window).scrollTop();
+  var div_top = $('#stick-here').offset().top - 38;
+  var div_bottom = $('#timeline-bottom').offset().top - 120;
+  if (window_top > div_top && window_top < div_bottom) {
+      $('#timeline').addClass('sticky');
+      $('#timeline-placeholder').css({display: 'block'})
+  } else {
+      $('#timeline').removeClass('sticky');
+      $('#timeline-placeholder').css({display: 'none'})
+  }
+}
+$(function() {
+    $(window).scroll(stick_here);
+    stick_here();
+});
+
+function activate() {
+  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1989","#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
+  var years = ["#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11","#year12","#year13","#year14"];
+  var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end","#year-1969-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end","#year-2016-end"];
+  var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10","#tick11","#tick12"];
+  var window_top = $(window).scrollTop() + 134;
+  var eventdates_top = []; 
+  var eventdatesend_top = [];
+  for(var i = 0; i < eventdates.length; i++) {
+    eventdates_top.push($(eventdates[i]).offset().top - 1);
+    eventdatesend_top.push($(eventdatesend[i]).offset().top);
+    if (window_top > eventdates_top[i] && window_top < eventdatesend_top[i]) {
+        $(tickgroup[i]).addClass('active');
+        $(years[i]).addClass('active');
+    } else {
+        $(tickgroup[i]).removeClass('active');
+        $(years[i]).removeClass('active');
+    }
+  }
+}
+
+$(function() {
+    $(window).scroll(activate);
+    activate();
+});
