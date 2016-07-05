@@ -528,10 +528,15 @@ function stick_here() {
   var div_bottom = $('#timeline-bottom').offset().top - 150; // used to be 120
   if (window_top > div_top && window_top < div_bottom) {
       $('#timeline').addClass('sticky');
+    if (screen.width > 480) {
       $('#timeline-placeholder').css({display: 'block'})
+    }
+    else {
+      $('#timeline-placeholder').css({display: 'none'})
+    }
   } else {
       $('#timeline').removeClass('sticky');
-      $('#timeline-placeholder').css({display: 'none'})
+      $('#timeline-placeholder').css({display: 'none'});
   }
 }
 $(function() {
@@ -548,7 +553,7 @@ function activate() {
   var eventdates_top = [];
   var eventdatesend_top = [];
   for(var i = 0; i < eventdates.length; i++) {
-    eventdates_top.push($(eventdates[i]).offset().top - 1);
+    eventdates_top.push($(eventdates[i]).offset().top - 1 + 113);
     eventdatesend_top.push($(eventdatesend[i]).offset().top);
     if (window_top > eventdates_top[i] && window_top < eventdatesend_top[i]) {
         $(tickgroup[i]).addClass('active');
