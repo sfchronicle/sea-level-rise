@@ -1177,7 +1177,7 @@ footer {
 .event-info {
   width: 80%;
   float: left;
-  font-size: 18px;
+  font-size: 14px;
 
   @media @mobile {
   width: 90%;
@@ -1185,28 +1185,32 @@ footer {
   }
 }
 
-#year0, #year1 {
+#year0, #year12 {
   fill: gray;
 }
 
-#year2, #year3, #year4, #year5, #year6, #year7, #year8, #year9, #year10, #year11, #year12, #year13, #year14 {
+#year1, #year2, #year3, #year4, #year5, #year6, #year7, #year8, #year9, #year10, #year11 {
   display: none;
 }
 
-.tick:hover > #year2,
-.tick:hover > #year2,
-.tick:hover > #year3,
-.tick:hover > #year4,
-.tick:hover > #year5,
-.tick:hover > #year6,
-.tick:hover > #year7,
-.tick:hover > #year8,
-.tick:hover > #year9,
-.tick:hover > #year10,
-.tick:hover > #year11,
-.tick:hover > #year12,
+#year13, #year14, #year15, #year16, #year17, #year18, #year19, #year20, #year21, #year22, #year23, #year24, #year25 {
+  display: none;
+}
+
 .tick:hover > #year13,
-.tick:hover > #year14 {
+.tick:hover > #year14,
+.tick:hover > #year15,
+.tick:hover > #year16,
+.tick:hover > #year17,
+.tick:hover > #year18,
+.tick:hover > #year19,
+.tick:hover > #year20,
+.tick:hover > #year21,
+.tick:hover > #year22,
+.tick:hover > #year23,
+.tick:hover > #year24,
+.tick:hover > #year25,
+.tick:hover > #year26 {
   display: block;
   fill: gray;
 }
@@ -1218,6 +1222,10 @@ footer {
 .tick .active {
   display: block !important;
   fill: black;
+}
+
+.right-align {
+  margin-right: 10px;
 }
 
 .tick text {
