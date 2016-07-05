@@ -288,17 +288,17 @@ $(document).ready(function () {
     $("#part2").addClass("hide");
     $("#part3").addClass("hide");
     // $(window).scrollTop($("#part1"));
-    $('html, body').animate({scrollTop:$('#part1').position().top}, 'slow');
+    $('html, body').animate({scrollTop:$('#part1').position().top}, 'fast');
   } else if (hash == "#part2") {
     $("#part1").addClass("hide");
     $("#part3").addClass("hide");
     // $(window).scrollTop($("#part2"));
-    $('html, body').animate({scrollTop:$('#part2').position().top}, 'slow');
+    $('html, body').animate({scrollTop:$('#part2').position().top}, 'fast');
   } else {
     $("#part1").addClass("hide");
     $("#part2").addClass("hide");
     // $(window).scrollTop($("#part3"));
-    $('html, body').animate({scrollTop:$('#part3').position().top}, 'slow');
+    $('html, body').animate({scrollTop:$('#part3').position().top}, 'fast');
   }
   // =$(window).scrollTop(0);
 });
