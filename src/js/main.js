@@ -273,9 +273,29 @@ $(function() {
 });
 
 $(".anchor").click(function(event) {
-  $('body').animate( { scrollTop:$(this.hash).offset().top} , 1000);
+  console.log(this.hash);
+  $("#part1").addClass("hide");
+  $("#part2").addClass("hide");
+  $("#part3").addClass("hide");
+  $(this.hash).removeClass("hide");
+  // $('body').animate( { scrollTop:$(this.hash).offset().top} , 1000);
 } );
 
+$(document).ready(function () {
+  var hash = window.location.hash;
+  console.log(hash);
+  if (hash == "#part1") {
+    $("#part2").addClass("hide");
+    $("#part3").addClass("hide");
+  } else if (hash == "#part2") {
+    $("#part1").addClass("hide");
+    $("#part3").addClass("hide");
+  } else {
+    $("#part1").addClass("hide");
+    $("#part2").addClass("hide");
+  }
+  // =$(window).scrollTop(0);
+});
 
 var $elem = $('#infobox .item'), l = $elem.length, i = 0;
 function go() {
@@ -593,7 +613,7 @@ function activate() {
         $(years[0]).css({display: ''});
       }
     }
-    
+
   }
 }
 
