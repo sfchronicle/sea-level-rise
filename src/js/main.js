@@ -410,9 +410,6 @@ if (screen.width > 900) {
   };
 }
 
-console.log(screen.width);
-console.log(width);
-
 var height = 50;
 
 var xAxisGroup = d3.select(".timeline").append("svg")
@@ -436,7 +433,7 @@ x2.domain(d3.extent(timelineData, function(d) {
   return d.year;
 }));
 
-var xAxis2 = d3.axisTop()
+var xAxis2 = d3.axisBottom()
   .scale(x2)
   .tickFormat(d3.format(".0f"))
   .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
@@ -447,7 +444,7 @@ var xAxis2 = d3.axisTop()
   .tickSize(0)
   .tickPadding(15);
 
-var xAxis = d3.axisBottom()
+var xAxis = d3.axisTop()
   .scale(x)
   .tickFormat(d3.format(".0f"))
   .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
@@ -458,12 +455,10 @@ var xAxis = d3.axisBottom()
   .tickSize(0)
   .tickPadding(15);
 
-if (screen.width > 480) {
-  xAxisGroup.append("g")
-      .attr("class", "axisbottom")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-}
+xAxisGroup.append("g")
+    .attr("class", "axisbottom")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
 
 xAxisGroup.append("g")
     .attr("class", "axistop")
