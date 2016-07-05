@@ -1067,10 +1067,19 @@ footer {
   margin-top: 20px;
   img {
     height: 1200px;
+    @media @mobile {
+      height: 900px;
+      width: 100%;
+    }
   }
   float: left;
   width: 50%;
   text-align: center;
+  @media @mobile {
+    width: 100%;
+    position: relative;
+    // position: fixed;
+  }
 }
 
 .pier-info {
@@ -1082,6 +1091,26 @@ footer {
   @media @tablet {
     font-size: 14px;
     padding-right: 0;
+  }
+  @media @mobile {
+    display: none;
+  }
+}
+
+.pier-info-mobile {
+  // z-index: 10000;
+  position: absolute;
+  // position: fixed;
+  // bottom: 10px;
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  font-family: @block-graphics;
+  padding: 20px;
+  font-size: 14px;
+  margin-right: 5%;
+  display: none;
+  @media @mobile {
+    display: block;
   }
 }
 

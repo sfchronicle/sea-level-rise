@@ -289,42 +289,70 @@ go();
 
 // scrolling map for embarcadero section
 
-var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
-var textHeight = 0;
-var inc = mapHeight/8; //how often we should see new map element
-embarcaderoData.forEach(function(pier,index) {
-  var pier_str = ".pier"+index;
-  $(pier_str).text(pier.text);
-  textHeight = textHeight + $(pier_str).height()+40; // each block has 40px padding
-});
-textHeight = textHeight-20; // every block has 40px of padding except the bottom
-
-var top_padding = Math.floor((mapHeight-textHeight)/7);
-console.log(top_padding);
-if (top_padding < 0) {
-  console.log("ERROR ERROR ERROR");
-  top_padding = 0;
-}
-embarcaderoData.forEach(function(pier,index) {
-  if (index > 0) {
+if (screen.width > 480) {
+  var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
+  var textHeight = 0;
+  var inc = mapHeight/8; //how often we should see new map element
+  embarcaderoData.forEach(function(pier,index) {
     var pier_str = ".pier"+index;
-    $(pier_str).css('padding-top',top_padding);
-  }
-});
+    $(pier_str).text(pier.text);
+    textHeight = textHeight + $(pier_str).height()+40; // each block has 40px padding
+  });
+  textHeight = textHeight-20; // every block has 40px of padding except the bottom
 
-$(window).scroll(function(){
-    var pos = $(this).scrollTop();
-    var embarcadero_pos = $('#sticky-map-top').offset().top-200;
-    if(pos < embarcadero_pos) {
-        $('.pier0').css('color','black');
+  var top_padding = Math.floor((mapHeight-textHeight)/7);
+  console.log(top_padding);
+  if (top_padding < 0) {
+    console.log("ERROR ERROR ERROR");
+    top_padding = 0;
+  }
+  embarcaderoData.forEach(function(pier,index) {
+    if (index > 0) {
+      var pier_str = ".pier"+index;
+      $(pier_str).css('padding-top',top_padding);
     }
-    if(pos > embarcadero_pos) {
-      $(".pier-info").css('color','#B2B2B2');
-      var idx = Math.round((pos-embarcadero_pos)/inc);
-      var pier_active = ".pier"+idx;
-      $(pier_active).css('color','black');
-    }
-});
+  });
+
+  $(window).scroll(function(){
+      var pos = $(this).scrollTop();
+      var embarcadero_pos = $('#sticky-map-top').offset().top-200;
+      if(pos < embarcadero_pos) {
+          $('.pier0').css('color','black');
+      }
+      if(pos > embarcadero_pos) {
+        $(".pier-info").css('color','#B2B2B2');
+        var idx = Math.round((pos-embarcadero_pos)/inc);
+        var pier_active = ".pier"+idx;
+        $(pier_active).css('color','black');
+      }
+  });
+} else {
+    console.log("GOT HERE")
+    $(window).scroll(function(){
+      var pos = $(this).scrollTop();
+      var embarcadero_pos = $('#sticky-map-top').offset().top-100;
+      var mapHeight = 900; //size of map
+      var inc = mapHeight/8; //how often we should see new map elementf
+      // console.log(pos);
+      // console.log(embarcadero_pos);
+      if(pos >= embarcadero_pos) {
+          $('.pier-info-mobile').css("display","none");
+      }
+      if(pos > embarcadero_pos) {
+        $('.pier-info-mobile').css("display","block");
+        // console.log(embarcaderoData[0].text);
+        var idx = Math.round((pos-embarcadero_pos)/inc);
+        console.log(idx);
+        if (idx < 12 && idx > 0) {
+          var top_padding = (idx*inc+20)+"px";
+          // var top_padding = (inc*(idx-1)+100)+"px";
+          console.log(top_padding);
+          $('.pier-info-mobile').text(embarcaderoData[idx].text);
+          $('.pier-info-mobile').css('margin-top',top_padding);
+        }
+      }
+    });
+}
 
 // $(window).scroll(function(){
 //     var pos = $(this).scrollTop();
@@ -383,16 +411,19 @@ x.domain(d3.extent(timelineData, function(d) {
 var xAxis = d3.axisTop()
   .scale(x)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1863","1970","2016"])
-  .tickSize([10]);
+  .tickValues(["1863","1970","2016"]);
 
 xAxisGroup.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
-    .call(xAxis)
-    .append("circle")
-      .attr("cx",5)
-      .attr("cy",5);
+    // .append("circle")
+    //   .attr("cx",5)
+    //   .attr("cy",5)
+    .call(xAxis);
+
+var ticks = xAxisGroup.selectAll(".tick");
+console.log(ticks);
+ticks.each(function() { d3.select(this).append("circle").attr("r", 10); });
 
 // xAxisGroup
 //   .call(d3.axisBottom(xScale).tickValues(["1863","2016"]))
