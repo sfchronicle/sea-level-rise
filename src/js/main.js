@@ -573,7 +573,7 @@ function activate() {
 //          .attr("transform", "translate(0)");
 //    }
 
-    if ($(years[10]).hasClass('active') || $(years[11]).hasClass('active')) {
+    if ($(years[10]).hasClass('active') || $(years[11]).hasClass('active') || ($(years[9]).hasClass('active') && screen.width <= 350)) {
       $(years[12]).css({display: 'none'});
     }
     else {
@@ -588,15 +588,7 @@ function activate() {
         $(years[0]).css({display: ''});
       }
     }
-    else if (screen.width <= 350) {
-      if($(years[9]).hasClass('active')) {
-        $(years[12]).css({display: 'none'});
-      }
-      else {
-        $(years[12]).css({display: ''});
-      }
-    }
-
+    
   }
 }
 
