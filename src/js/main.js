@@ -479,10 +479,10 @@ ticks.selectAll("line").remove();
 ticks.each(function() {
   d3.select(this)
     .append("circle")
-      .attr("r", 6)
+      .attr("r", 5)
       .attr("fill","white")
-      .style("stroke","black")
-      .style("stroke-width","2px");
+      .style("stroke","gray")
+      .style("stroke-width","1px");
   d3.selectAll("circle")
     .attr("id", function(d,i) {return "tick" + i})
   d3.selectAll("text")

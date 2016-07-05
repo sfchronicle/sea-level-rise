@@ -1186,7 +1186,7 @@ footer {
 }
 
 #year0, #year1 {
-  fill: blue;
+  fill: gray;
 }
 
 #year2, #year3, #year4, #year5, #year6, #year7, #year8, #year9, #year10, #year11, #year12, #year13, #year14 {
@@ -1208,10 +1208,11 @@ footer {
 .tick:hover > #year13,
 .tick:hover > #year14 {
   display: block;
+  fill: gray;
 }
 
 .tick:hover circle {
-  fill: black;
+  fill: gray;
 }
 
 .tick .active {
@@ -1220,7 +1221,8 @@ footer {
 }
 
 .tick text {
-  font-size: 13px;
+  font-size: 12px;
+  font-family: @block-graphics;
 }
 
 #timeline.sticky {
