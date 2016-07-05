@@ -1242,10 +1242,7 @@ footer {
   margin-top: 38px;
   text-align: left;
   @media @mobile {
-    top: unset;
-    bottom: 0;
-    font-size: 14px;
-    vertical-align: bottom;
+    margin-top: 0;
   }
 }
 
@@ -1268,4 +1265,9 @@ path.domain {
   height: 113px;
   margin-top: -113px;
   visibility: hidden;
+  
+  @media @mobile {
+    height: 75px;
+    margin-top: -75px;
+  }
 }
