@@ -287,15 +287,18 @@ $(document).ready(function () {
   if (hash == "#part1") {
     $("#part2").addClass("hide");
     $("#part3").addClass("hide");
-    $(window).scrollTop($("#part1"));
+    // $(window).scrollTop($("#part1"));
+    $('html, body').animate({scrollTop:$('#part1').position().top}, 'slow');
   } else if (hash == "#part2") {
     $("#part1").addClass("hide");
     $("#part3").addClass("hide");
-    $(window).scrollTop($("#part2"));
+    // $(window).scrollTop($("#part2"));
+    $('html, body').animate({scrollTop:$('#part2').position().top}, 'slow');
   } else {
     $("#part1").addClass("hide");
     $("#part2").addClass("hide");
-    $(window).scrollTop($("#part3"));
+    // $(window).scrollTop($("#part3"));
+    $('html, body').animate({scrollTop:$('#part3').position().top}, 'slow');
   }
   // =$(window).scrollTop(0);
 });
