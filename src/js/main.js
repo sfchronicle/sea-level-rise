@@ -354,7 +354,7 @@ if (screen.width > 480) {
         $('.pier-info-mobile').css("display","block");
         var idx = Math.round((pos-embarcadero_pos)/inc);
         if (idx < 8 && idx >= 0) {
-          var top_padding = (idx*inc+100)+"px";
+          var top_padding = (idx*inc+10)+"px";
           $('.pier-info-mobile').text(embarcaderoData[idx].location+ ": "+embarcaderoData[idx].text);
           $('.pier-info-mobile').css('margin-top',top_padding);
         }
@@ -396,7 +396,7 @@ if (screen.width > 900) {
     var width = 320;
     var margin = {
       top: -10,
-      right: 25, 
+      right: 25,
       bottom: 35,
       left: 25
     };
