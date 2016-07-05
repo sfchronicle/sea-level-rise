@@ -507,16 +507,16 @@ ticks.each(function() {
 
 function stick_here() {
   var window_top = $(window).scrollTop();
-  var div_top = $('#stick-here').offset().top - 38; // account for sticky header height
+  if (screen.width > 480) {
+    var div_top = $('#stick-here').offset().top - 38; // account for sticky header height
+  }
+  else {
+    var div_top = $('#stick-here').offset().top + 10;
+  }
   var div_bottom = $('#timeline-bottom').offset().top - 150; // used to be 120
   if (window_top > div_top && window_top < div_bottom) {
       $('#timeline').addClass('sticky');
-    if (screen.width > 480) {
       $('#timeline-placeholder').css({display: 'block'})
-    }
-    else {
-      $('#timeline-placeholder').css({display: 'none'})
-    }
   } else {
       $('#timeline').removeClass('sticky');
       $('#timeline-placeholder').css({display: 'none'});
@@ -532,12 +532,26 @@ function activate() {
   var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11","#year12"];
   var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end","#year-1969-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end","#year-2016-end"];
   var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10","#tick11","#tick12"];
-  var window_top = $(window).scrollTop() + 114;
   var eventdates_top = [];
   var eventdatesend_top = [];
+
+  if (screen.width > 480) {
+    var window_top = $(window).scrollTop() + 114;
+  }
+  else {
+    var window_top = $(window).scrollTop() + 76;
+  }
+
   for(var i = 0; i < eventdates.length; i++) {
-    eventdates_top.push($(eventdates[i]).offset().top - 1 + 113);
+    if (screen.width > 480) {
+      eventdates_top.push($(eventdates[i]).offset().top - 1 + 113);
+    }
+    else {
+      eventdates_top.push($(eventdates[i]).offset().top - 1 + 75);
+    }
+
     eventdatesend_top.push($(eventdatesend[i]).offset().top);
+
     if (window_top > eventdates_top[i] && window_top < eventdatesend_top[i]) {
         $(tickgroup[i]).addClass('active');
         $(years[i]).addClass('active');
@@ -564,6 +578,23 @@ function activate() {
     }
     else {
       $(years[12]).css({display: ''});
+    }
+
+    if (screen.width <= 480) {
+      if($(years[1]).hasClass('active')) {
+        $(years[0]).css({display: 'none'});
+      }
+      else {
+        $(years[0]).css({display: ''});
+      }
+    }
+    else if (screen.width <= 350) {
+      if($(years[9]).hasClass('active')) {
+        $(years[12]).css({display: 'none'});
+      }
+      else {
+        $(years[12]).css({display: ''});
+      }
     }
 
   }
