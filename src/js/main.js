@@ -397,7 +397,7 @@ if (screen.width > 900) {
     var margin = {
       top: -10,
       right: 25,
-      bottom: 35,
+      bottom: 25,
       left: 25
     };
 } else if (screen.width <= 370) {
@@ -405,7 +405,7 @@ if (screen.width > 900) {
   var margin = {
     top: -10,
     right: 20,
-    bottom: 35,
+    bottom: 25,
     left: 20
   };
 }
@@ -458,23 +458,28 @@ var xAxis = d3.axisBottom()
   .tickSize(0)
   .tickPadding(15);
 
-xAxisGroup.append("g")
-    .attr("class", "axisbottom")
-    .attr("transform", "translate(0," + height + ")")
-    .call(xAxis2);
+if (screen.width > 480) {
+  xAxisGroup.append("g")
+      .attr("class", "axisbottom")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+}
 
 xAxisGroup.append("g")
     .attr("class", "axistop")
     .attr("transform", "translate(0," + height + ")")
-    .call(xAxis);
+    .call(xAxis2);
 
 var axistop = xAxisGroup.selectAll(".axistop");
 
 var ticks = axistop.selectAll(".tick")
-    .style("cursor", "pointer")
+
+if (screen.width > 480) {
+  ticks.style("cursor", "pointer")
     .on("click", function(d){
         document.location.href = "#year-" + d;
     });
+}
 
 ticks.selectAll("line").remove();
 ticks.each(function() {
@@ -511,7 +516,7 @@ function stick_here() {
     var div_top = $('#stick-here').offset().top - 38; // account for sticky header height
   }
   else {
-    var div_top = $('#stick-here').offset().top + 10;
+    var div_top = $('#stick-here').offset().top;
   }
   var div_bottom = $('#timeline-bottom').offset().top - 150; // used to be 120
   if (window_top > div_top && window_top < div_bottom) {
@@ -539,7 +544,7 @@ function activate() {
     var window_top = $(window).scrollTop() + 114;
   }
   else {
-    var window_top = $(window).scrollTop() + 76;
+    var window_top = $(window).scrollTop() + 66;
   }
 
   for(var i = 0; i < eventdates.length; i++) {
@@ -547,7 +552,7 @@ function activate() {
       eventdates_top.push($(eventdates[i]).offset().top - 1 + 113);
     }
     else {
-      eventdates_top.push($(eventdates[i]).offset().top - 1 + 75);
+      eventdates_top.push($(eventdates[i]).offset().top - 1 + 65);
     }
 
     eventdatesend_top.push($(eventdatesend[i]).offset().top);

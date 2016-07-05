@@ -1152,6 +1152,10 @@ footer {
 #timeline-placeholder {
   display: none;
   height: 75px;
+
+  @media @mobile {
+    height: 65px;
+  }
 }
 
 .event {
@@ -1198,26 +1202,28 @@ footer {
   display: none;
 }
 
-.tick:hover > #year13,
-.tick:hover > #year14,
-.tick:hover > #year15,
-.tick:hover > #year16,
-.tick:hover > #year17,
-.tick:hover > #year18,
-.tick:hover > #year19,
-.tick:hover > #year20,
-.tick:hover > #year21,
-.tick:hover > #year22,
-.tick:hover > #year23,
-.tick:hover > #year24,
-.tick:hover > #year25,
-.tick:hover > #year26 {
-  display: block;
-  fill: gray;
-}
+@media screen and (min-width: 481px) {
+  .tick:hover > #year13,
+  .tick:hover > #year14,
+  .tick:hover > #year15,
+  .tick:hover > #year16,
+  .tick:hover > #year17,
+  .tick:hover > #year18,
+  .tick:hover > #year19,
+  .tick:hover > #year20,
+  .tick:hover > #year21,
+  .tick:hover > #year22,
+  .tick:hover > #year23,
+  .tick:hover > #year24,
+  .tick:hover > #year25,
+  .tick:hover > #year26 {
+    display: block;
+    fill: gray;
+  }
 
-.tick:hover circle {
-  fill: gray;
+  .tick:hover circle {
+    fill: gray;
+  }
 }
 
 .tick .active {
