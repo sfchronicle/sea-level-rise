@@ -26,38 +26,6 @@ $(window).resize(function() {
     }
 });
 
-// read the parts
-
-function hidden() {
-  var parts = ["#part1", "#part2", "#part3"];
-  for ( i = 0; i < parts.length; i++) {
-    $(parts[i]).hide();
-  }
-};
-
-$(".part-1").click(function() {
-  hidden();
-  $("#part1").fadeIn("fast", function() {
-    });
-});
-
-$(".part-2").click(function() {
-  hidden();
-  $("#part2").fadeIn("fast", function() {
-    });
-});
-
-$(".part-3").click(function() {
-  hidden();
-  $("#part3").fadeIn("fast", function() {
-    });
-});
-
-$(".scroll").click(function(event){
-  event.preventDefault();
-  $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
-});
-
 // $("my-video-duck").prop('muted', true); //mute
 // $("my-video-infobox").prop('muted', true); //mute
 
@@ -304,33 +272,33 @@ $(function() {
     sticky_relocate();
 });
 
-//  $(".anchor").click(function(event) {
-//    console.log(this.hash);
-//    $("#part1").addClass("hide");
-//    $("#part2").addClass("hide");
-//    $("#part3").addClass("hide");
-//    $(this.hash).removeClass("hide");
-//    $('body').scrollTop($(this.hash));
-//  } );
+$(".anchor").click(function(event) {
+  console.log(this.hash);
+  $("#part1").addClass("hide");
+  $("#part2").addClass("hide");
+  $("#part3").addClass("hide");
+  $(this.hash).removeClass("hide");
+  $('body').scrollTop($(this.hash));
+} );
 
-//  $(document).ready(function () {
-//    var hash = window.location.hash;
-//    console.log(hash);
-//    if (hash == "#part1") {
-//      $("#part2").addClass("hide");
-//      $("#part3").addClass("hide");
-//      $(window).scrollTop($("#part1"));
-//    } else if (hash == "#part2") {
-//      $("#part1").addClass("hide");
-//      $("#part3").addClass("hide");
-//      $(window).scrollTop($("#part2"));
-//    } else {
-//      $("#part1").addClass("hide");
-//      $("#part2").addClass("hide");
-//      $(window).scrollTop($("#part3"));
-//    }
+$(document).ready(function () {
+  var hash = window.location.hash;
+  console.log(hash);
+  if (hash == "#part1") {
+    $("#part2").addClass("hide");
+    $("#part3").addClass("hide");
+    $(window).scrollTop($("#part1"));
+  } else if (hash == "#part2") {
+    $("#part1").addClass("hide");
+    $("#part3").addClass("hide");
+    $(window).scrollTop($("#part2"));
+  } else {
+    $("#part1").addClass("hide");
+    $("#part2").addClass("hide");
+    $(window).scrollTop($("#part3"));
+  }
   // =$(window).scrollTop(0);
-//  });
+});
 
 var $elem = $('#infobox .item'), l = $elem.length, i = 0;
 function go() {
