@@ -278,7 +278,7 @@ $(".anchor").click(function(event) {
   $("#part2").addClass("hide");
   $("#part3").addClass("hide");
   $(this.hash).removeClass("hide");
-  // $('body').animate( { scrollTop:$(this.hash).offset().top} , 1000);
+  $('body').scrollTop($(this.hash));
 } );
 
 $(document).ready(function () {
@@ -287,12 +287,15 @@ $(document).ready(function () {
   if (hash == "#part1") {
     $("#part2").addClass("hide");
     $("#part3").addClass("hide");
+    $(window).scrollTop($("#part1"));
   } else if (hash == "#part2") {
     $("#part1").addClass("hide");
     $("#part3").addClass("hide");
+    $(window).scrollTop($("#part2"));
   } else {
     $("#part1").addClass("hide");
     $("#part2").addClass("hide");
+    $(window).scrollTop($("#part3"));
   }
   // =$(window).scrollTop(0);
 });
