@@ -40,12 +40,6 @@ li {
 .title-container {
   background: white;
   padding: 0;
-
-  .credit, .caption {
-    @media @mobile {
-      color: @light-gray !important;
-    }
-  }
 }
 
 .inset-photo {
@@ -124,10 +118,9 @@ li {
     padding-left: 5px;
   }
   .credit {
-    padding: 5px 0;
-    font-size: 12px;
-    padding-left: 5px;
-    font-style: italic;
+    padding-left: 2px;
+    font-size: 14px;
+    color: @light-gray;
     &.nopadding {
       padding: 0;
       padding-left: 5px;
@@ -1251,6 +1244,10 @@ footer {
   width: 90%;
   margin-left: 5%;
   }
+}
+
+.date12 {
+  border-bottom: 0.5px solid rgba(0,0,0,0.2);
 }
 
 #year0, #year12 {

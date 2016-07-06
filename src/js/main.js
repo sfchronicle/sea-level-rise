@@ -317,6 +317,19 @@ function go() {
 
 go();
 
+
+timelineData.forEach(function(d,i) {
+  console.log(d);
+  var date_lookup = ".date"+i;
+  $(date_lookup).append("<span class='event-anchor' id='" + d.top_id + "'></span>");
+  $(date_lookup).append("<div class='event'></div>");
+  $(date_lookup).append("<div id='" + d.bottom_id + "'></div>");
+
+  $(date_lookup + " .event").append("<div class='date'>" + d.year + "</div>");
+  $(date_lookup + " .event").append("<div class='event-info'>" + d.text + "</div>");
+});
+
+
 // scrolling map for embarcadero section
 
 if (screen.width > 480) {
@@ -542,28 +555,28 @@ $(function() {
 function activate() {
   var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1989",
       "#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
-  var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
-      "#year12"]; // the text
   var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end",
       "#year-1969-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end","#year-2016-end"];
+  var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
+      "#year12"]; // the text
   var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10",
       "#tick11","#tick12"]; // the circles
   var eventdates_top = [];
   var eventdatesend_top = [];
 
   if (screen.width > 480) {
-    var window_top = $(window).scrollTop() + 114;
+    var window_top = $(window).scrollTop() + 113;
   }
   else {
-    var window_top = $(window).scrollTop() + 66;
+    var window_top = $(window).scrollTop() + 65;
   }
 
   for(var i = 0; i < eventdates.length; i++) {
     if (screen.width > 480) {
-      eventdates_top.push($(eventdates[i]).offset().top - 1 + 113);
+      eventdates_top.push($(eventdates[i]).offset().top + 113);
     }
     else {
-      eventdates_top.push($(eventdates[i]).offset().top - 1 + 65);
+      eventdates_top.push($(eventdates[i]).offset().top + 65);
     }
 
     eventdatesend_top.push($(eventdatesend[i]).offset().top);
