@@ -602,13 +602,24 @@ $(function() {
 });
 
 // initialize photo gallery #4 in part 2
-var photo_test = {};
-photo_test.url = "./assets/photos/embarcadero/sfwaterfront0710_PH2.jpg";
-photo_test.capt = "Caption here.";
-photo_test.cred = "Person Person Person";
-document.querySelector("#photo_g40").innerHTML = slideshow_template(photo_test);
-// document.querySelector("#photo_g41").innerHTML = slideshow_template(photo_gallery4[1]);
-// document.querySelector("#photo_g42").innerHTML = slideshow_template(photo_gallery4[2]);
+var photo1 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH2.jpg",
+  caption: "Caption here.",
+  cred: "Person Person Person"
+};
+var photo2 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH3.jpg",
+  caption: "Caption here.",
+  cred: "Person Person Person"
+};
+var photo3 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH4.jpg",
+  caption: "Caption here.",
+  credit: "Person Person Person"
+};
+document.querySelector("#photo_g40").innerHTML = slideshow_template(photo1);
+document.querySelector("#photo_g41").innerHTML = slideshow_template(photo2);
+document.querySelector("#photo_g42").innerHTML = slideshow_template(photo3);
 
 // photo gallery #4
 var gallery4_idx = 0;
