@@ -319,7 +319,6 @@ go();
 
 
 timelineData.forEach(function(d,i) {
-  console.log(d);
   var date_lookup = ".date"+i;
   $(date_lookup).append("<span class='event-anchor' id='" + d.top_id + "'></span>");
   $(date_lookup).append("<div class='event'></div>");
@@ -327,6 +326,7 @@ timelineData.forEach(function(d,i) {
 
   $(date_lookup + " .event").append("<div class='date'>" + d.year + "</div>");
   $(date_lookup + " .event").append("<div class='event-info'>" + d.text + "</div>");
+  $(date_lookup + " .event-info").append("<img class='event-img' src='./assets/photos/embarcadero/timeline/" + d.year + ".jpg'>");
 });
 
 
@@ -480,7 +480,7 @@ x2.domain(d3.extent(timelineData, function(d) {
 var xAxis2 = d3.axisBottom()
   .scale(x2)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
+  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1978","1989","1990","2000","2013","2014","2016"]
   )
   .tickSize(0)
   .tickPadding(15);
@@ -488,7 +488,7 @@ var xAxis2 = d3.axisBottom()
 var xAxis = d3.axisTop()
   .scale(x)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
+  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1978","1989","1990","2000","2013","2014","2016"]
   )
   .tickSize(0)
   .tickPadding(15);
@@ -553,14 +553,15 @@ $(function() {
 });
 
 function activate() {
-  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1989",
-      "#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
+  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1978",
+      "#year-1989","#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
   var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end",
-      "#year-1969-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end","#year-2016-end"];
+      "#year-1969-end","#year-1978-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end",
+      "#year-2016-end"];
   var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
-      "#year12"]; // the text
+      "#year12","#year13"]; // the text
   var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10",
-      "#tick11","#tick12"]; // the circles
+      "#tick11","#tick12","#tick13"]; // the circles
   var eventdates_top = [];
   var eventdatesend_top = [];
 
@@ -590,11 +591,11 @@ function activate() {
     }
 
     // removes years if there is an overlap
-    if ($(years[10]).hasClass('active') || $(years[11]).hasClass('active') || ($(years[9]).hasClass('active') && screen.width <= 350)) {
-      $(years[12]).css({display: 'none'});
+    if ($(years[11]).hasClass('active') || $(years[12]).hasClass('active') || ($(years[10]).hasClass('active') && screen.width <= 350)) {
+      $(years[13]).css({display: 'none'});
     }
     else {
-      $(years[12]).css({display: ''});
+      $(years[13]).css({display: ''});
     }
 
     if (screen.width <= 480) {

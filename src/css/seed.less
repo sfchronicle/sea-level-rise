@@ -1247,24 +1247,23 @@ footer {
   }
 }
 
-.date12 {
+.date13 {
   border-bottom: 0.5px solid rgba(0,0,0,0.2);
 }
 
-#year0, #year12 {
+#year0, #year13 {
   fill: gray;
 }
 
-#year1, #year2, #year3, #year4, #year5, #year6, #year7, #year8, #year9, #year10, #year11 {
+#year1, #year2, #year3, #year4, #year5, #year6, #year7, #year8, #year9, #year10, #year11, #year12 {
   display: none;
 }
 
-#year13, #year14, #year15, #year16, #year17, #year18, #year19, #year20, #year21, #year22, #year23, #year24, #year25 {
+#year14, #year15, #year16, #year17, #year18, #year19, #year20, #year21, #year22, #year23, #year24, #year25, #year26, #year27 {
   display: none;
 }
 
 @media screen and (min-width: 481px) {
-  .tick:hover > #year13,
   .tick:hover > #year14,
   .tick:hover > #year15,
   .tick:hover > #year16,
@@ -1277,7 +1276,8 @@ footer {
   .tick:hover > #year23,
   .tick:hover > #year24,
   .tick:hover > #year25,
-  .tick:hover > #year26 {
+  .tick:hover > #year26,
+  .tick:hover > #year27 {
     display: block;
     fill: gray;
   }
@@ -1339,4 +1339,10 @@ path.domain {
     height: 65px;
     margin-top: -65px;
   }
+}
+
+.event-img {
+  width: 100%;
+  max-width: 600px;
+  padding-top: 15px;
 }
