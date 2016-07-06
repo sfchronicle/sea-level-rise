@@ -667,3 +667,69 @@ document.getElementById("scroll-left-gallery4").addEventListener("click", functi
     $("#scroll-left-gallery4").removeClass("first");
   };
 });
+
+// initialize photo gallery #5 in part 2
+var photo4 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH12.jpg",
+  caption: "Caption here.",
+  credit: "Person Person Person"
+};
+var photo5 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH13.jpg",
+  caption: "Caption here.",
+  credit: "Person Person Person"
+};
+var photo6 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH14.jpg",
+  caption: "Caption here.",
+  credit: "Person Person Person"
+};
+var photo7 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH15.jpg",
+  caption: "Caption here.",
+  credit: "Person Person Person"
+};
+var photo8 = {
+  url: "./assets/photos/embarcadero/sfwaterfront0710_PH16.jpg",
+  caption: "Caption here.",
+  credit: "Person Person Person"
+};
+document.querySelector("#photo_g50").innerHTML = slideshow_template(photo4);
+document.querySelector("#photo_g51").innerHTML = slideshow_template(photo5);
+document.querySelector("#photo_g52").innerHTML = slideshow_template(photo6);
+document.querySelector("#photo_g53").innerHTML = slideshow_template(photo7);
+document.querySelector("#photo_g54").innerHTML = slideshow_template(photo8);
+
+// photo gallery #4
+var gallery5_idx = 0;
+// set up clicking to update map interactive on mobile
+document.getElementById("scroll-right-gallery5").addEventListener("click", function() {
+  gallery5_idx = gallery5_idx+1;
+  $(".photo_g5").removeClass("active");
+  $("#photo_g5"+gallery5_idx).addClass("active");
+  if (gallery5_idx == 4) {
+    $("#scroll-right-gallery5").addClass("last");
+  } else {
+    $("#scroll-right-gallery5").removeClass("last");
+  };
+  if (gallery5_idx == 0) {
+    $("#scroll-left-gallery5").addClass("first");
+  } else {
+    $("#scroll-left-gallery5").removeClass("first");
+  };
+});
+document.getElementById("scroll-left-gallery5").addEventListener("click", function() {
+  gallery5_idx = gallery5_idx-1;
+  $(".photo_g5").removeClass("active");
+  $("#photo_g5"+gallery5_idx).addClass("active");
+  if (gallery5_idx == 4) {
+    $("#scroll-right-gallery5").addClass("last");
+  } else {
+    $("#scroll-right-gallery5").removeClass("last");
+  };
+  if (gallery5_idx == 0) {
+    $("#scroll-left-gallery5").addClass("first");
+  } else {
+    $("#scroll-left-gallery5").removeClass("first");
+  };
+});
