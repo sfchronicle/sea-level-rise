@@ -47,6 +47,7 @@ for (var i = 0, len = permitData.length; i < len; i++) {
 var template = dot.compile(require("../_info.html"));
 var mobile_template = dot.compile(require("../_mobile_info.html"));
 var agency_template = dot.compile(require("../_agency_info.html"));
+var slideshow_template = dot.compile(require("../_slideshow.html"));
 
 // initialize agency interactive
 document.querySelector(".agency-role").innerHTML = agency_template(lookup_agency[0]);
@@ -294,13 +295,16 @@ $(document).ready(function () {
     $("#part3").addClass("hide");
     // $(window).scrollTop($("#part2"));
     $('html, body').animate({scrollTop:$('#part2').position().top}, 'fast');
-  } else {
+  } else if (hash == "#part3"){
     $("#part1").addClass("hide");
     $("#part2").addClass("hide");
     // $(window).scrollTop($("#part3"));
     $('html, body').animate({scrollTop:$('#part3').position().top}, 'fast');
+  } else {
+    $("#part2").addClass("hide");
+    $("#part3").addClass("hide");
+    $('html, body').animate({scrollTop:$('#part1').position().top}, 'fast');
   }
-  // =$(window).scrollTop(0);
 });
 
 var $elem = $('#infobox .item'), l = $elem.length, i = 0;
@@ -595,4 +599,47 @@ function activate() {
 $(function() {
     $(window).scroll(activate);
     activate();
+});
+
+// initialize photo gallery #4 in part 2
+var photo_test = {};
+photo_test.url = "./assets/photos/embarcadero/sfwaterfront0710_PH2.jpg";
+photo_test.capt = "Caption here.";
+photo_test.cred = "Person Person Person";
+document.querySelector("#photo_g40").innerHTML = slideshow_template(photo_test);
+// document.querySelector("#photo_g41").innerHTML = slideshow_template(photo_gallery4[1]);
+// document.querySelector("#photo_g42").innerHTML = slideshow_template(photo_gallery4[2]);
+
+// photo gallery #4
+var gallery4_idx = 0;
+// set up clicking to update map interactive on mobile
+document.getElementById("scroll-right-gallery4").addEventListener("click", function() {
+  gallery4_idx = gallery4_idx+1;
+  $(".photo_g4").removeClass("active");
+  $("#photo_g4"+gallery4_idx).addClass("active");
+  if (gallery4_idx == 2) {
+    $("#scroll-right-gallery4").addClass("last");
+  } else {
+    $("#scroll-right-gallery4").removeClass("last");
+  };
+  if (gallery4_idx == 0) {
+    $("#scroll-left-gallery4").addClass("first");
+  } else {
+    $("#scroll-left-gallery4").removeClass("first");
+  };
+});
+document.getElementById("scroll-left-gallery4").addEventListener("click", function() {
+  gallery4_idx = gallery4_idx-1;
+  $(".photo_g4").removeClass("active");
+  $("#photo_g4"+gallery4_idx).addClass("active");
+  if (gallery4_idx == 2) {
+    $("#scroll-right-gallery4").addClass("last");
+  } else {
+    $("#scroll-right-gallery4").removeClass("last");
+  };
+  if (gallery4_idx == 0) {
+    $("#scroll-left-gallery4").addClass("first");
+  } else {
+    $("#scroll-left-gallery4").removeClass("first");
+  };
 });
