@@ -619,12 +619,12 @@ $(function() {
 var photo1 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH2.jpg",
   caption: "Caption here.",
-  cred: "Person Person Person"
+  credit: "Person Person Person"
 };
 var photo2 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH3.jpg",
   caption: "Caption here.",
-  cred: "Person Person Person"
+  credit: "Person Person Person"
 };
 var photo3 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH4.jpg",
