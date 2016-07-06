@@ -324,9 +324,10 @@ timelineData.forEach(function(d,i) {
   $(date_lookup).append("<div class='event'></div>");
   $(date_lookup).append("<div id='" + d.bottom_id + "'></div>");
 
-  $(date_lookup + " .event").append("<div class='date'>" + d.year + "</div>");
-  $(date_lookup + " .event").append("<div class='event-info'>" + d.text + "</div>");
+  $(date_lookup + " .event").append("<div class='date' id='" + d.year_id + "'>" + d.year + "</div>");
+  $(date_lookup + " .event").append("<div class='event-info'>" + d.text + "<br></div>");
   $(date_lookup + " .event-info").append("<img class='event-img' src='./assets/photos/embarcadero/timeline/" + d.year + ".jpg'>");
+  $(date_lookup + " .event-info").append("<div class='caption'>" + d.caption + "<span class='credit'>" + d.credit + "</span></div>");
 });
 
 
@@ -559,9 +560,11 @@ function activate() {
       "#year-1969-end","#year-1978-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end",
       "#year-2016-end"];
   var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
-      "#year12","#year13"]; // the text
+      "#year12","#year13"]; // x-axis text values
+  var yearids = ["#year-0", "#year-1", "#year-2","#year-3","#year-4","#year-5","#year-6","#year-7","#year-8","#year-9","#year-10","#year-11",
+      "#year-12","#year-13"]; // dates in the timeline
   var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10",
-      "#tick11","#tick12","#tick13"]; // the circles
+      "#tick11","#tick12","#tick13"]; // circles on axis
   var eventdates_top = [];
   var eventdatesend_top = [];
 
@@ -585,9 +588,11 @@ function activate() {
     if (window_top > eventdates_top[i] && window_top < eventdatesend_top[i]) {
         $(tickgroup[i]).addClass('active');
         $(years[i]).addClass('active');
+        $(yearids[i]).addClass('activedate');
     } else {
         $(tickgroup[i]).removeClass('active');
         $(years[i]).removeClass('active');
+        $(yearids[i]).removeClass('activedate');
     }
 
     // removes years if there is an overlap
