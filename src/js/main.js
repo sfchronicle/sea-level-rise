@@ -394,6 +394,7 @@ var xScale = d3.scaleLinear()
   .domain([1863,2016])
   .range([0,645]);
 
+// setting dimensions for the svg
 if (screen.width > 900) {
   var width = 820;
   var margin = {
@@ -463,9 +464,6 @@ var xAxis2 = d3.axisBottom()
   .scale(x2)
   .tickFormat(d3.format(".0f"))
   .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
-//    d3.extent(timelineData, function(d) {
-//      return d.year;
-//    })
   )
   .tickSize(0)
   .tickPadding(15);
@@ -474,9 +472,6 @@ var xAxis = d3.axisTop()
   .scale(x)
   .tickFormat(d3.format(".0f"))
   .tickValues(["1863","1876","1898","1916","1936","1958","1969","1989","1990","2000","2013","2014","2016"]
-//    d3.extent(timelineData, function(d) {
-//      return d.year;
-//    })
   )
   .tickSize(0)
   .tickPadding(15);
@@ -516,19 +511,6 @@ ticks.each(function() {
     .attr("id", function(d,i) {return "year" + i})
 });
 
-// xAxisGroup
-//   .call(d3.axisBottom(xScale).tickValues(["1863","2016"]))
-//   .data(timelineData)
-//   .enter().append("circle")
-//     .attr("cx", function(d) {
-//       console.log(d);
-//       console.log(d.year-1863);
-//       return d.year - 1863;
-//     })
-//     .attr("cy", 5)
-//     .attr("r", 5);
-
-
 // sticky timeline
 
 function stick_here() {
@@ -542,10 +524,10 @@ function stick_here() {
   var div_bottom = $('#timeline-bottom').offset().top - 150; // used to be 120
   if (window_top > div_top && window_top < div_bottom) {
       $('#timeline').addClass('sticky');
-      $('#timeline-placeholder').css({display: 'block'})
+      $('#timeline-placeholder').css({display: 'block'}) // puts in a placeholder for where sticky used to be for smooth scrolling
   } else {
       $('#timeline').removeClass('sticky');
-      $('#timeline-placeholder').css({display: 'none'});
+      $('#timeline-placeholder').css({display: 'none'}); // removes placeholder
   }
 }
 $(function() {
@@ -554,10 +536,14 @@ $(function() {
 });
 
 function activate() {
-  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1989","#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
-  var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11","#year12"];
-  var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end","#year-1969-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end","#year-2016-end"];
-  var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10","#tick11","#tick12"];
+  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1989",
+      "#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
+  var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
+      "#year12"]; // the text
+  var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end",
+      "#year-1969-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end","#year-2016-end"];
+  var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10",
+      "#tick11","#tick12"]; // the circles
   var eventdates_top = [];
   var eventdatesend_top = [];
 
@@ -586,19 +572,7 @@ function activate() {
         $(years[i]).removeClass('active');
     }
 
-//    if ($(years[11]).hasClass('active')) {
-//        $(years[12])
-//          .attr("transform", "translate(20)");
-//    }
-//    else if ($(years[10]).hasClass('active')) {
-//        $(years[12])
-//          .attr("transform", "translate(15)");
-//    }
-//    else {
-//        $(years[12])
-//          .attr("transform", "translate(0)");
-//    }
-
+    // removes years if there is an overlap
     if ($(years[10]).hasClass('active') || $(years[11]).hasClass('active') || ($(years[9]).hasClass('active') && screen.width <= 350)) {
       $(years[12]).css({display: 'none'});
     }
