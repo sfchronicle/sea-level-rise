@@ -274,28 +274,38 @@ $(function() {
 });
 
 $(".anchor").click(function(event) {
-  console.log(this.hash);
+  $("#part1_link").removeClass("active");
+  $("#part2_link").removeClass("active");
+  $("#part3_link").removeClass("active");
   $("#part1").addClass("hide");
   $("#part2").addClass("hide");
   $("#part3").addClass("hide");
   $(this.hash).removeClass("hide");
   $('body').scrollTop($(this.hash));
+  var link_id = this.hash+"_link";
+  $(link_id).addClass("active");
 } );
 
 $(document).ready(function () {
+  $("#part1_link").removeClass("active");
+  $("#part2_link").removeClass("active");
+  $("#part3_link").removeClass("active");
   var hash = window.location.hash;
   console.log(hash);
   if (hash == "#part1") {
+    $("#part1_link").addClass("active");
     $("#part2").addClass("hide");
     $("#part3").addClass("hide");
     // $(window).scrollTop($("#part1"));
     $('html, body').animate({scrollTop:$('#part1').position().top}, 'fast');
   } else if (hash == "#part2") {
+    $("#part2_link").addClass("active");
     $("#part1").addClass("hide");
     $("#part3").addClass("hide");
     // $(window).scrollTop($("#part2"));
     $('html, body').animate({scrollTop:$('#part2').position().top}, 'fast');
   } else if (hash == "#part3"){
+    $("#part3_link").addClass("active");
     $("#part1").addClass("hide");
     $("#part2").addClass("hide");
     // $(window).scrollTop($("#part3"));
