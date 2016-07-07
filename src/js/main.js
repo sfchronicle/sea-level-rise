@@ -279,7 +279,7 @@ $(".anchor").click(function(event) {
   $("#part3_link").removeClass("active");
   $("#part1").addClass("hide");
   $("#part2").addClass("hide");
-  $("#part3").addClass("hide");
+  $("#resources").addClass("hide");
   $(this.hash).removeClass("hide");
   $('body').scrollTop($(this.hash));
   var link_id = this.hash+"_link";
@@ -294,24 +294,24 @@ $(document).ready(function () {
   if (hash == "#part1") {
     $("#part1_link").addClass("active");
     $("#part2").addClass("hide");
-    $("#part3").addClass("hide");
+    $("#resources").addClass("hide");
     // $(window).scrollTop($("#part1"));
     $('html, body').animate({scrollTop:$('#part1').position().top}, 'fast');
   } else if (hash == "#part2") {
     $("#part2_link").addClass("active");
     $("#part1").addClass("hide");
-    $("#part3").addClass("hide");
+    $("#resources").addClass("hide");
     // $(window).scrollTop($("#part2"));
     $('html, body').animate({scrollTop:$('#part2').position().top}, 'fast');
-  } else if (hash == "#part3"){
+  } else if (hash == "#resources"){
     $("#part3_link").addClass("active");
     $("#part1").addClass("hide");
     $("#part2").addClass("hide");
     // $(window).scrollTop($("#part3"));
-    $('html, body').animate({scrollTop:$('#part3').position().top}, 'fast');
+    $('html, body').animate({scrollTop:$('#resources').position().top}, 'fast');
   } else {
     $("#part2").addClass("hide");
-    $("#part3").addClass("hide");
+    $("#resources").addClass("hide");
     $('html, body').animate({scrollTop:$('#part1').position().top}, 'fast');
   }
 });
