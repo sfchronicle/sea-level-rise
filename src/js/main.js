@@ -389,10 +389,10 @@ if (screen.width > 480) {
         $(".pier-info").css('color','#B2B2B2');
         var idx = Math.round((pos-embarcadero_pos)/inc);
         var pier_active = ".pier"+idx;
-        var pier_path_active = "#pier"+idx+"path";
+        var pier_path_active = ".st"+idx;
         $(pier_active).css('color','black');
+        $(pier_path_active).css('fill', 'Red');
         console.log(pier_path_active);
-        $(pier_path_active).attr('style','fill:red');
       }
   });
 } else {
