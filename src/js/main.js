@@ -379,7 +379,6 @@ if (screen.width > 480) {
       var pos = $(this).scrollTop();
       var embarcadero_pos = $('#sticky-map-top').offset().top-200;
       if(pos < embarcadero_pos) {
-          console.log("hiding stuff");
           $('.pier0').css('color','black');
           $('.st').css('fill','#F2F2F2');
           $('.st0').css('fill','red');
@@ -399,7 +398,8 @@ if (screen.width > 480) {
       $(".pier-info-mobile").attr("display","block");
       var pos = $(this).scrollTop();
       var embarcadero_pos = $('#sticky-map-top').offset().top-100;
-      var mapHeight = 900; //size of map
+      var mapHeight = $("#mobile-map-embarcadero").height();
+      console.log(mapHeight);//900; //size of map
       var inc_list = [142, 255, 465, 565, 660, 797, 913, 973, 1203];
       var inc = mapHeight/8; //how often we should see new map elementf
       if(pos >= embarcadero_pos) {
@@ -409,7 +409,7 @@ if (screen.width > 480) {
         $('.pier-info-mobile').css("display","block");
         var idx = Math.round((pos-embarcadero_pos)/inc);
         if (idx < 8 && idx >= 0) {
-          var inc_new = Math.round(inc_list[idx]/1203*mapHeight);
+          var inc_new = Math.round(inc_list[idx]/1203*mapHeight)+15;
           // var top_padding = (idx*inc+10)+"px";
           var top_padding = inc_new+"px";
           $('.pier-info-mobile').text(embarcaderoData[idx].location+ ": "+embarcaderoData[idx].text);
