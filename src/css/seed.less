@@ -154,6 +154,24 @@ li {
   }
 }
 
+.next {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background: #0777b3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#next {
+  color: white;
+}
+
+.next:hover {
+  background: #2b4d70;
+}
+
 .text, .hed-container, .inset-photo, .inset-splash, .photo-gallery1, .photo-gallery2, .photo-gallery3, .photo-gallery4, .photo-gallery5, .interactive-header, .flex-container,  .small-format-photo {
   max-width: 900px;
 }
@@ -1095,7 +1113,7 @@ footer {
   cursor: pointer;
 }
 
-// part 2: resources -----------------------------------------------------------
+// part 3: resources -----------------------------------------------------------
 
 .resource {
   font-weight: bolder;
@@ -1202,7 +1220,7 @@ footer {
   }
 }
 
-// pt 3: timeline code -----------------------------------------------------------
+// pt 2: timeline code -----------------------------------------------------------
 
 .timeline-container {
   max-width: 800px;
@@ -1261,7 +1279,19 @@ footer {
 .event-info {
   width: 80%;
   float: left;
-  font-size: 14px;
+  font-size: 15px;
+
+  .caption {
+    font-family: @body;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  .credit {
+    font-family: @body;
+    padding-left: 5px;
+    font-size: 14px;
+    color: @light-gray;
+  }
 
   @media @mobile {
   width: 90%;
@@ -1312,6 +1342,10 @@ footer {
 .tick .active {
   display: block !important;
   fill: black !important;
+}
+
+.activedate {
+  font-family: @bold-graphics;
 }
 
 .right-align {
@@ -1365,6 +1399,6 @@ path.domain {
 
 .event-img {
   width: 100%;
-  max-width: 600px;
-  padding-top: 15px;
+  max-width: 550px;
+  padding-top: 20px;
 }
