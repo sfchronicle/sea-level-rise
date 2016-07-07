@@ -412,7 +412,7 @@ if (screen.width > 480) {
           var inc_new = Math.round(inc_list[idx]/1203*mapHeight)+15;
           // var top_padding = (idx*inc+10)+"px";
           var top_padding = inc_new+"px";
-          $('.pier-info-mobile').text(embarcaderoData[idx].location+ ": "+embarcaderoData[idx].text);
+          $('.pier-info-mobile').html("<span class='loc'>" + embarcaderoData[idx].location+ "</span>"+ ": "+embarcaderoData[idx].text);
           $('.pier-info-mobile').css('margin-top',top_padding);
         }
       }
