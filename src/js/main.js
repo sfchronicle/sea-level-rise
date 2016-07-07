@@ -524,7 +524,9 @@ var ticks = axistop.selectAll(".tick")
 if (screen.width > 480) {
   ticks.style("cursor", "pointer")
     .on("click", function(d){
-        document.location.href = "#year-" + d;
+         $('html, body').animate({
+                    scrollTop: $("#year-" + d ).offset().top
+                }, 1000);
     });
 }
 
