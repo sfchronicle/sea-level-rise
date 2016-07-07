@@ -699,7 +699,7 @@ var photo4 = {
 };
 var photo5 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH13.jpg",
-  caption: "Mishant Chandra, (left) and David Fromstein order drinks at Red's Java House at Pier 30 on the Embarcadero. ",
+  caption: "Mishant Chandra (left) and David Fromstein order drinks at Red's Java House at Pier 30 on the Embarcadero. ",
   credit: "Michael Macor"
 };
 var photo6 = {
