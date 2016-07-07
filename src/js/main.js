@@ -400,7 +400,7 @@ if (screen.width > 480) {
       var embarcadero_pos = $('#sticky-map-top').offset().top-100;
       var mapHeight = $("#mobile-map-embarcadero").height();
       console.log(mapHeight);//900; //size of map
-      var inc_list = [142, 255, 465, 565, 660, 797, 913, 973, 1203];
+      var inc_list = [142, 291, 465, 565, 660, 797, 913, 973, 1203];
       var inc = mapHeight/8; //how often we should see new map elementf
       if(pos >= embarcadero_pos) {
           $('.pier-info-mobile').css("display","none");
@@ -765,26 +765,26 @@ document.getElementById("scroll-left-gallery5").addEventListener("click", functi
       height = 420,
       winHeight = screen.height,
       winWidth = screen.width;
- 
+
   function handleIntent(e) {
     e = e || window.event;
     var target = e.target || e.srcElement,
         m, left, top;
- 
+
     while (target && target.nodeName.toLowerCase() !== 'a') {
       target = target.parentNode;
     }
- 
+
     if (target && target.nodeName.toLowerCase() === 'a' && target.href) {
       m = target.href.match(intentRegex);
       if (m) {
         left = Math.round((winWidth / 2) - (width / 2));
         top = 0;
- 
+
         if (winHeight > height) {
           top = Math.round((winHeight / 2) - (height / 2));
         }
- 
+
         window.open(target.href, 'intent', windowOptions + ',width=' + width +
                                            ',height=' + height + ',left=' + left + ',top=' + top);
         e.returnValue = false;
@@ -792,7 +792,7 @@ document.getElementById("scroll-left-gallery5").addEventListener("click", functi
       }
     }
   }
- 
+
   if (document.addEventListener) {
     document.addEventListener('click', handleIntent, false);
   } else if (document.attachEvent) {
