@@ -399,7 +399,7 @@ if (screen.width > 480) {
       var pos = $(this).scrollTop();
       var embarcadero_pos = $('#sticky-map-top').offset().top-100;
       var mapHeight = $("#mobile-map-embarcadero").height();
-      console.log(mapHeight);//900; //size of map
+      // console.log(mapHeight);//900; //size of map
       var inc_list = [142, 291, 465, 565, 660, 797, 913, 973, 1203];
       var inc = mapHeight/8; //how often we should see new map elementf
       if(pos >= embarcadero_pos) {
