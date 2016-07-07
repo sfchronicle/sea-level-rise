@@ -343,6 +343,14 @@ timelineData.forEach(function(d,i) {
 
 // scrolling map for embarcadero section
 
+if (screen.width > 900) {
+  $("#Layer_1").css('margin-left',"10%");
+} else if (screen.width > 1000) {
+  $("#Layer_1").css('margin-left',"20%");
+} else if (screen.width > 1100) {
+  $("#Layer_1").css('margin-left',"25%");
+}
+
 if (screen.width > 480) {
   var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
   var textHeight = 0;
