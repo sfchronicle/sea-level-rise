@@ -291,7 +291,6 @@ $(document).ready(function () {
   $("#part2_link").removeClass("active");
   $("#part3_link").removeClass("active");
   var hash = window.location.hash;
-  console.log(hash);
   if (hash == "#part1") {
     $("#part1_link").addClass("active");
     $("#part2").addClass("hide");
@@ -693,7 +692,7 @@ document.getElementById("scroll-left-gallery4").addEventListener("click", functi
 // initialize photo gallery #5 in part 2
 var photo4 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH12.jpg",
-  caption: "Chris Stricklen waits for a ferry on the bay side of the Ferry Buiilding on the Embarcadero at the foot of Market Street. ",
+  caption: "Chris Stricklen waits for a ferry on the bay side of the Ferry Building on the Embarcadero at the foot of Market Street. ",
   credit: "Michael Macor"
 };
 var photo5 = {
