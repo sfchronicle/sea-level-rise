@@ -636,17 +636,17 @@ $(function() {
 var photo1 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH2.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 var photo2 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH3.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 var photo3 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH4.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 document.querySelector("#photo_g40").innerHTML = slideshow_template(photo1);
 document.querySelector("#photo_g41").innerHTML = slideshow_template(photo2);
@@ -690,27 +690,27 @@ document.getElementById("scroll-left-gallery4").addEventListener("click", functi
 var photo4 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH12.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 var photo5 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH13.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 var photo6 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH14.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 var photo7 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH15.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 var photo8 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH16.jpg",
   caption: "Caption here.",
-  credit: "Person Person Person"
+  credit: "Michael Macor"
 };
 document.querySelector("#photo_g50").innerHTML = slideshow_template(photo4);
 document.querySelector("#photo_g51").innerHTML = slideshow_template(photo5);
