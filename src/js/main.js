@@ -369,29 +369,30 @@ if (screen.width > 480) {
   });
 
   $(window).scroll(function(){
+      $("#pier7path").css({fill:'red'});
       var pos = $(this).scrollTop();
       var embarcadero_pos = $('#sticky-map-top').offset().top-200;
       if(pos < embarcadero_pos) {
           $('.pier0').css('color','black');
           // $('[id*="path"]').hide();
-          $("#pier0path").hide();
-          $("#pier1path").hide();
-          $("#pier2path").hide();
-          $("#pier3path").hide();
-          $("#pier4path").hide();
-          $("#pier5path").hide();
-          $("#pier6path").hide();
-          $("#pier7path").hide();
-          console.log("hiding paths");
+          // $("#pier0path").attr('background', "#F2F2F2");
+          // $("#pier1path").attr('background', "#F2F2F2");
+          // $("#pier2path").attr('background', "#F2F2F2");
+          // $("#pier3path").attr('background', "#F2F2F2");
+          // $("#pier4path").attr('background', "#F2F2F2");
+          // $("#pier5path").attr('background', "#F2F2F2");
+          // $("#pier6path").attr('background', "#F2F2F2");
+          // $("#pier7path").attr('background', "#F2F2F2");
       }
       if(pos > embarcadero_pos) {
-        $('#pier0path').hide();
+        $('#pier0path').attr('background', "#F2F2F2");
         $(".pier-info").css('color','#B2B2B2');
         var idx = Math.round((pos-embarcadero_pos)/inc);
         var pier_active = ".pier"+idx;
         var pier_path_active = "#pier"+idx+"path";
         $(pier_active).css('color','black');
-        $(pier_path_active).show();
+        console.log(pier_path_active);
+        $(pier_path_active).attr('style','fill:red');
       }
   });
 } else {
