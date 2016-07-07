@@ -491,7 +491,7 @@ x2.domain(d3.extent(timelineData, function(d) {
 var xAxis2 = d3.axisBottom()
   .scale(x2)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1978","1989","1990","2000","2013","2014","2016"]
+  .tickValues(["1863","1876","1898","1916","1936","1959","1969","1978","1989","1990","2000","2013","2014","2016"]
   )
   .tickSize(0)
   .tickPadding(15);
@@ -499,7 +499,7 @@ var xAxis2 = d3.axisBottom()
 var xAxis = d3.axisTop()
   .scale(x)
   .tickFormat(d3.format(".0f"))
-  .tickValues(["1863","1876","1898","1916","1936","1958","1969","1978","1989","1990","2000","2013","2014","2016"]
+  .tickValues(["1863","1876","1898","1916","1936","1959","1969","1978","1989","1990","2000","2013","2014","2016"]
   )
   .tickSize(0)
   .tickPadding(15);
@@ -564,9 +564,9 @@ $(function() {
 });
 
 function activate() {
-  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1958","#year-1969","#year-1978",
+  var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1959","#year-1969","#year-1978",
       "#year-1989","#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
-  var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1958-end",
+  var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1959-end",
       "#year-1969-end","#year-1978-end","#year-1989-end","#year-1990-end","#year-2000-end","#year-2013-end","#year-2014-end",
       "#year-2016-end"];
   var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
