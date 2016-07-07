@@ -247,41 +247,54 @@ a {
 
 .deck {
   font-size: 25px;
+  @media @tablet {
+    font-size: 21px;
+  }
+  @media screen and (max-width: 672px) {
+    font-size: 18px;
+  }
 }
 
 .title {
   font-family: @title;
   font-weight: 400;
   font-size: 50px;
-  padding: 10px 0;
+  padding: 10px 20px;
   text-align: center;
-  color: white;
-  z-index: 100;
-  position: absolute;
-  top: 60%;
   left:0;
   right:0;
   margin: 0 auto;
-  padding: 0 40px;
-  &.embarcadero {
-    padding: 0;
+
+  @media screen and (min-width: 673px) {
+    color: white;
+    z-index: 100;
+    position: absolute;
     top: 45%;
-    width: 70%;
-    background-color: #b2b2b2;
-    background-color: rgba(0, 0, 0, .3);
+
+    &.embarcadero {
+        top: 35%;
+        width: 70%;
+        background-color: #b2b2b2;
+        background-color: rgba(0, 0, 0, .3)
+    }
   }
+
+  @media screen and (max-width: 672px) {
+    top: 0;
+    display: block;
+    color: black;
+    padding: 20px 5px 0 5px;
+  }
+
   @media @tablet-horiz {
-    top: 50%;
+    top: 40%;
     font-size: 40px;
   }
   @media @tablet {
-    top: 46%;
     font-size: 30px;
   }
   @media @mobile {
-    top: 18%;
-    font-size: 20px;
-    width: 95%;
+    width: 100%;
   }
 }
 
@@ -292,8 +305,11 @@ a {
   font-family: @body;
   color: white;
   z-index: 400;
+  @media screen and (max-width: 672px) {
+    color: black;
+  }
   @media @mobile {
-    font-size: 10px;
+    font-size: 12px;
     padding-top: 10px;
   }
   &.lower {
@@ -317,6 +333,10 @@ a {
     left: auto;
   }
 
+  @media screen and (max-width: 672px) {
+    color: black;
+  }
+
   a {
     color: @gray-blue;
     font-size: 20px;
@@ -325,6 +345,9 @@ a {
     }
     @media @mobile {
       font-size: 16px;
+    }
+    @media screen and (max-width: 672px) {
+      color: black;
     }
     padding: 0 8px;
     color: white;
