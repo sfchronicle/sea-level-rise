@@ -6,7 +6,7 @@ var d3 = require('d3');
 $(window).resize(function() {
     var Wwidth= $(this).width();
     if (Wwidth <= 480) {
-      console.log("phone");
+//      console.log("phone");
     } else if (Wwidth < 1100) {
       $('.left').css('margin-left',20 +'px');
       $('.intro').css('margin-right',20 +'px');
@@ -363,9 +363,9 @@ if (screen.width > 480) {
   textHeight = textHeight-20; // every block has 40px of padding except the bottom
 
   var top_padding = Math.floor((mapHeight-textHeight)/7);
-  console.log(top_padding);
+//  console.log(top_padding);
   if (top_padding < 0) {
-    console.log("ERROR ERROR ERROR");
+//    console.log("ERROR ERROR ERROR");
     top_padding = 0;
   }
   embarcaderoData.forEach(function(pier,index) {
