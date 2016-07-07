@@ -618,6 +618,10 @@ footer {
       margin: 0 10px;
     }
   }
+
+  @media @mobile {
+    font-size: 14px;
+  }
 }
 .logo-link {
   .link {
@@ -629,10 +633,9 @@ footer {
 }
 
 .menu-navigation {
-  width: 70%;
+  width: 100%;
   margin: 10px auto;
   @media @mobile {
-    width: 95%;
     margin-top: 5px;
   }
 }
@@ -702,11 +705,15 @@ footer {
   @media @mobile {
     display: inline-block;
     // padding: 5px;
-    font-size: 14px;
+    font-size: 13px;
     // padding-top: 5px;
-    margin: 5px;
+    margin: 2px;
     &.subscribe {
       margin-right: 5px;
+    }
+    &.social {
+      padding-left: 3px;
+      padding-right: 1px;
     }
   }
 }
