@@ -636,17 +636,17 @@ $(function() {
 // initialize photo gallery #4 in part 2
 var photo1 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH2.jpg",
-  caption: "Caption here.",
+  caption: "People fill the sidewalk outside the Pier 23 restaurant and bar on the Embarcadero. ",
   credit: "Michael Macor"
 };
 var photo2 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH3.jpg",
-  caption: "Caption here.",
+  caption: "The seawall along the Embarcadero is covered in algae and could fail in a major earthquake. ",
   credit: "Michael Macor"
 };
 var photo3 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH4.jpg",
-  caption: "Caption here.",
+  caption: "People passing by at Pier 26 along the Embarcadero. ",
   credit: "Michael Macor"
 };
 document.querySelector("#photo_g40").innerHTML = slideshow_template(photo1);
@@ -690,27 +690,27 @@ document.getElementById("scroll-left-gallery4").addEventListener("click", functi
 // initialize photo gallery #5 in part 2
 var photo4 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH12.jpg",
-  caption: "Caption here.",
+  caption: "Chris Stricklen waits for a ferry on the bay side of the Ferry Buiilding on the Embarcadero at the foot of Market Street. ",
   credit: "Michael Macor"
 };
 var photo5 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH13.jpg",
-  caption: "Caption here.",
+  caption: "Mishant Chandra, (left) and David Fromstein order drinks at Red's Java House at Pier 30 on the Embarcadero. ",
   credit: "Michael Macor"
 };
 var photo6 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH14.jpg",
-  caption: "Caption here.",
+  caption: "Visitors enjoy the shady side of the Ferry Building. ",
   credit: "Michael Macor"
 };
 var photo7 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH15.jpg",
-  caption: "Caption here.",
+  caption: "Patrons enjoy lunch on the water side of the Ferry Building, which reopened as a market hall in 2003. ",
   credit: "Michael Macor"
 };
 var photo8 = {
   url: "./assets/photos/embarcadero/sfwaterfront0710_PH16.jpg",
-  caption: "Caption here.",
+  caption: "Red's Java House, which opened as Franco’s, a lunch spot for longshoremen, in the 1930s and was renamed Red’s in 1955. It’s one of the last remnants of the working waterfront. ",
   credit: "Michael Macor"
 };
 document.querySelector("#photo_g50").innerHTML = slideshow_template(photo4);
