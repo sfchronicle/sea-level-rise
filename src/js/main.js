@@ -356,7 +356,7 @@ if (screen.width > 480) {
   var inc = mapHeight/8; //how often we should see new map element
   embarcaderoData.forEach(function(pier,index) {
     var pier_str = ".pier"+index;
-    $(pier_str).text(pier.location+":  "+pier.text);
+    $(pier_str).html("<span class='loc'>" + pier.location+ "</span>" +":  "+pier.text);
     $(pier_str).attr('id',pier.locationID);
     textHeight = textHeight + $(pier_str).height()+40; // each block has 40px padding
   });
