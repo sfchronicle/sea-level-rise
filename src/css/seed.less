@@ -194,7 +194,8 @@ li {
   // background: lighten(@gray-blue,20%);
   height: 36px;
   @media @mobile {
-    height: 60px;
+    padding-top: 15px;
+    font-size: 25px;
   }
 }
 
@@ -530,9 +531,14 @@ footer {
 
 .top-nav {
   margin: 20px auto;
-  width: 75%;
+  width: 100%;
+  // width: 75%;
   // border: @light-gray 1px solid;
   padding-bottom: 10px;
+  @media @mobile {
+    // width: 100%;
+    margin: 10px auto;
+  }
 }
 
 .navigation {
@@ -578,11 +584,17 @@ footer {
 .menu-links {
   .link {
     margin: 0 20px;
+    @media @mobile {
+      margin: 0 10px;
+    }
   }
 }
 .logo-link {
   .link {
     margin-left: 20px;
+    @media @mobile {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -590,6 +602,7 @@ footer {
   width: 70%;
   margin: 10px auto;
   @media @mobile {
+    width: 95%;
     margin-top: 5px;
   }
 }
@@ -624,6 +637,9 @@ footer {
       color: darken(@gray-blue,30%);
     }
     text-transform: uppercase;
+    @media @mobile {
+      display: none;
+    }
   }
   &.social {
     float: right;
