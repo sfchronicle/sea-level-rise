@@ -561,26 +561,26 @@ function activate() {
       "#year-2016-end"];
   var years = ["#year0", "#year1", "#year2","#year3","#year4","#year5","#year6","#year7","#year8","#year9","#year10","#year11",
       "#year12","#year13"]; // x-axis text values
-  var yearids = ["#year-0", "#year-1", "#year-2","#year-3","#year-4","#year-5","#year-6","#year-7","#year-8","#year-9","#year-10","#year-11",
-      "#year-12","#year-13"]; // dates in the timeline
+  var yearids = ["#year-0", "#year-1", "#year-2","#year-3","#year-4","#year-5","#year-6","#year-7","#year-8","#year-9",
+      "#year-10","#year-11","#year-12","#year-13"]; // dates in the timeline
   var tickgroup = ["#tick0","#tick1","#tick2","#tick3","#tick4","#tick5","#tick6","#tick7","#tick8","#tick9","#tick10",
       "#tick11","#tick12","#tick13"]; // circles on axis
   var eventdates_top = [];
   var eventdatesend_top = [];
 
   if (screen.width > 480) {
-    var window_top = $(window).scrollTop() + 113;
+    var window_top = $(window).scrollTop() + 113 + 1;
   }
   else {
-    var window_top = $(window).scrollTop() + 65;
+    var window_top = $(window).scrollTop() + 65 + 1;
   }
 
   for(var i = 0; i < eventdates.length; i++) {
     if (screen.width > 480) {
-      eventdates_top.push($(eventdates[i]).offset().top + 113);
+      eventdates_top.push($(eventdates[i]).offset().top + 113 - 1);
     }
     else {
-      eventdates_top.push($(eventdates[i]).offset().top + 65);
+      eventdates_top.push($(eventdates[i]).offset().top + 65 - 1);
     }
 
     eventdatesend_top.push($(eventdatesend[i]).offset().top);
@@ -619,6 +619,8 @@ $(function() {
     $(window).scroll(activate);
     activate();
 });
+
+
 
 // initialize photo gallery #4 in part 2
 var photo1 = {
