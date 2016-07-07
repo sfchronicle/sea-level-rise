@@ -369,30 +369,22 @@ if (screen.width > 480) {
   });
 
   $(window).scroll(function(){
-      $("#pier7path").css({fill:'red'});
       var pos = $(this).scrollTop();
       var embarcadero_pos = $('#sticky-map-top').offset().top-200;
       if(pos < embarcadero_pos) {
+          console.log("hiding stuff");
           $('.pier0').css('color','black');
-          // $('[id*="path"]').hide();
-          // $("#pier0path").attr('background', "#F2F2F2");
-          // $("#pier1path").attr('background', "#F2F2F2");
-          // $("#pier2path").attr('background', "#F2F2F2");
-          // $("#pier3path").attr('background', "#F2F2F2");
-          // $("#pier4path").attr('background', "#F2F2F2");
-          // $("#pier5path").attr('background', "#F2F2F2");
-          // $("#pier6path").attr('background', "#F2F2F2");
-          // $("#pier7path").attr('background', "#F2F2F2");
+          $('.st').css('fill','#F2F2F2');
+          $('.st0').css('fill','red');
       }
       if(pos > embarcadero_pos) {
-        $('#pier0path').attr('background', "#F2F2F2");
         $(".pier-info").css('color','#B2B2B2');
+        $('.st').css('fill','#F2F2F2');
         var idx = Math.round((pos-embarcadero_pos)/inc);
         var pier_active = ".pier"+idx;
         var pier_path_active = ".st"+idx;
         $(pier_active).css('color','black');
-        $(pier_path_active).css('fill', 'Red');
-        console.log(pier_path_active);
+        $(pier_path_active).css('fill', 'red');
       }
   });
 } else {
@@ -401,6 +393,7 @@ if (screen.width > 480) {
       var pos = $(this).scrollTop();
       var embarcadero_pos = $('#sticky-map-top').offset().top-100;
       var mapHeight = 900; //size of map
+      var inc_list = [142, 255, 465, 565, 660, 797, 913, 973, 1203];
       var inc = mapHeight/8; //how often we should see new map elementf
       if(pos >= embarcadero_pos) {
           $('.pier-info-mobile').css("display","none");
@@ -409,7 +402,9 @@ if (screen.width > 480) {
         $('.pier-info-mobile').css("display","block");
         var idx = Math.round((pos-embarcadero_pos)/inc);
         if (idx < 8 && idx >= 0) {
-          var top_padding = (idx*inc+10)+"px";
+          var inc_new = Math.round(inc_list[idx]/1203*mapHeight);
+          // var top_padding = (idx*inc+10)+"px";
+          var top_padding = inc_new+"px";
           $('.pier-info-mobile').text(embarcaderoData[idx].location+ ": "+embarcaderoData[idx].text);
           $('.pier-info-mobile').css('margin-top',top_padding);
         }

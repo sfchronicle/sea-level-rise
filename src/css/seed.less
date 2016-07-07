@@ -1207,7 +1207,16 @@ footer {
   svg {
     height: 1200px;
     @media @mobile {
+      display: none;
       height: 900px;
+      width: 100%;
+    }
+  }
+  img {
+    display: none;
+    @media @mobile {
+      display: block;
+      height: 900px
       width: 100%;
     }
   }
