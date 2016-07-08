@@ -3,6 +3,36 @@ var dot = require("./lib/dot");
 var $ = require("jquery");
 var d3 = require('d3');
 
+// $(document).ready(function() {
+//   var hash = window.location.hash;
+//   if (hash == "#part2") {
+//     console.log("got to part two");
+//
+//     $("head").append('<meta name="twitter:title" content="Rising Reality: Shoring up the city&rsquo;s edge">');
+//     $("head").append('<meta name="twitter:url" content="http://projects.sfchronicle.com/2016/sea-level-rise/#part2">');
+//     $("head").append('<meta name="twitter:image" content="http://projects.sfchronicle.com/2016/sea-level-rise/assets/photos/embarcadero/sfwaterfront_social.jpg">');
+//     $("head").append('<meta name="twitter:description" content="Special report: History, the future and politics collide as bay waters and an aged seawall threaten San Francisco&rsquo;s Embarcadero.">');
+//
+//     $("head").append('<meta property="og:title" content="Rising Reality: Shoring up the city&rsquo;s edge">');
+//     $("head").append('<meta property="og:url" content="http://projects.sfchronicle.com/2016/sea-level-rise/#part2">');
+//     $("head").append('<meta property="og:image" content="http://projects.sfchronicle.com/2016/sea-level-rise/assets/photos/embarcadero/sfwaterfront_social.jpg">');
+//     $("head").append('<meta property="og:description" content="Special report: History, the future and politics collide as bay waters and an aged seawall threaten San Francisco&rsquo;s Embarcadero.">');
+//
+//   } else if (hash == "#part1"|| hash == "" ) {
+//     console.log("got to part one");
+//
+//     $("head").append('<meta name="twitter:title" content="Rising Reality: Bay Area&rsquo;s future depends on managing rising sea levels">');
+//     $("head").append('<meta name="twitter:url" content="http://projects.sfchronicle.com/2016/sea-level-rise/#part1">');
+//     $("head").append('<meta name="twitter:image" content="http://projects.sfchronicle.com/2016/sea-level-rise/assets/photos/therisk/sealevel_social.jpg">');
+//     $("head").append('<meta name="twitter:description" content="Special report: The Bay Area needs to plan for these shifting tides now and upend a half-century of priorities that inhibits adventurous decision-making and design.">');
+//
+//     $("head").append('<meta property="og:title" content="Bay Area’s future depends on managing rising sea levels">');
+//     $("head").append('<meta property="og:url" content="http://projects.sfchronicle.com/2016/sea-level-rise/#part1">');
+//     $("head").append('<meta property="og:image" content="http://projects.sfchronicle.com/2016/sea-level-rise/assets/photos/therisk/sealevel_social.jpg">');
+//     $("head").append('<meta property="og:description" content="Special report: The Bay Area needs to plan for these shifting tides now and upend a half-century of priorities that inhibits adventurous decision-making and design.">');
+//   }
+// });
+
 $(window).resize(function() {
     var Wwidth= $(this).width();
     if (Wwidth <= 480) {
