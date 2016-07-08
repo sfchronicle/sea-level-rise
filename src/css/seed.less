@@ -1239,7 +1239,18 @@ footer {
   }
 }
 
+#mobile-map-embarcadero {
 
+  img {
+      display: none;
+      @media @mobile {
+        display: block;
+        height: 900px
+        width: 100%;
+      }
+    }
+  
+}
 .scroll-image {
   margin-top: 20px;
   svg {
@@ -1247,14 +1258,6 @@ footer {
     @media @mobile {
       display: none;
       height: 900px;
-      width: 100%;
-    }
-  }
-  img {
-    display: none;
-    @media @mobile {
-      display: block;
-      height: 900px
       width: 100%;
     }
   }
