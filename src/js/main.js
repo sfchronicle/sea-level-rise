@@ -577,7 +577,7 @@ ticks.each(function() {
 
 // sticky timeline
 
-function stick_here() {
+function activate() {
   var window_top = $(window).scrollTop();
   if (screen.width > 480) {
     var div_top = $('#stick-here').offset().top - 38; // account for sticky header height
@@ -585,21 +585,17 @@ function stick_here() {
   else {
     var div_top = $('#stick-here').offset().top;
   }
-  var div_bottom = $('#timeline-bottom').offset().top - 150; // used to be 120
+  var div_bottom = $('#timeline-bottom').offset().top - 200; // used to be 120
   if (window_top > div_top && window_top < div_bottom) {
       $('#timeline').addClass('sticky');
       $('#timeline-placeholder').css({display: 'block'}) // puts in a placeholder for where sticky used to be for smooth scrolling
+        $('.timeline-me').removeClass('visible-close').addClass('sticky');
   } else {
       $('#timeline').removeClass('sticky');
       $('#timeline-placeholder').css({display: 'none'}); // removes placeholder
+        $('.timeline-me').addClass('visible-close').removeClass('sticky');
   }
-}
-$(function() {
-    $(window).scroll(stick_here);
-    stick_here();
-});
 
-function activate() {
   var eventdates = ["#year-1863","#year-1876","#year-1898","#year-1916","#year-1936","#year-1959","#year-1969","#year-1978",
       "#year-1989","#year-1990","#year-2000","#year-2013","#year-2014","#year-2016"];
   var eventdatesend = ["#year-1863-end","#year-1876-end","#year-1898-end","#year-1916-end","#year-1936-end","#year-1959-end",
@@ -616,9 +612,11 @@ function activate() {
 
   if (screen.width > 480) {
     var window_top = $(window).scrollTop() + 113 + 1;
+    $('.timeline-me').css("top","114px");
   }
   else {
     var window_top = $(window).scrollTop() + 65 + 1;
+    $('.timeline-me').css("top","65px");
   }
 
   for(var i = 0; i < eventdates.length; i++) {
@@ -659,11 +657,30 @@ function activate() {
     }
 
   }
+
 }
 
 $(function() {
     $(window).scroll(activate);
     activate();
+});
+
+
+$( ".view-timeline" ).click(function() {
+  var timelineup = $( ".timeline-interactive" ).slideToggle(300);
+  if (screen.width > 480) {
+    var timelinediff = timelineup.offset().top - 130;
+  }
+  else {
+    var timelinediff = timelineup.offset().top - 120;
+  }
+
+  $("body").animate({
+      scrollTop: timelinediff
+  }, {
+      duration: 300,
+      queue: false
+  })
 });
 
 
