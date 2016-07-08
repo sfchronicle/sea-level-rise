@@ -536,7 +536,7 @@ ticks.each(function() {
     .append("circle")
       .attr("r", 5)
       .attr("fill","white")
-      .style("stroke","gray")
+      .style("stroke","rgb(178, 178, 178)")
       .style("stroke-width","1px");
   d3.selectAll("circle")
     .attr("id", function(d,i) {return "tick" + i})
