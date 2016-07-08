@@ -351,7 +351,8 @@ if (screen.width > 900) {
 }
 
 if (screen.width > 480) {
-  var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
+  var mapHeight = $("#Layer_1").height()+40;
+  // var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
   var textHeight = 0;
   var inc = mapHeight/8; //how often we should see new map element
   embarcaderoData.forEach(function(pier,index) {

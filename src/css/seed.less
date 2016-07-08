@@ -1256,6 +1256,9 @@ footer {
   margin-top: 20px;
   svg {
     height: 1200px;
+    @media @phone-horiz {
+      height: 1000px;
+    }
     @media @mobile {
       display: none;
       height: 900px;
@@ -1284,6 +1287,11 @@ footer {
     font-size: 13px;
     padding-right: 0;
   }
+  // @media @phone-horiz {
+  //   margin-left: 60%;
+  //   font-size: 12px;
+  //   padding-right:0;
+  // }
   @media @mobile {
     display: none;
   }
